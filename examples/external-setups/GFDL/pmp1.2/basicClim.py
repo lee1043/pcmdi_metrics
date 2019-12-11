@@ -3,23 +3,25 @@ from pcmdi_metrics.pcmdi.pmp_parser import *
 import cdms2
 import cdutil
 import cdtime
+import ast
+
+# P Gleckler
+# Prototyping a simple version of pcmdi_compute_climatologies.py
+# Omits using CMOR and formalizing time coordinate with bounds
+# 20191211
+
 
 ###
-# INPUT PARAMETERS OFTEN STORED IN SEPRATE FILE
+# INPUT PARAMETERS OFTEN STORED IN SEPRATE FILE FOR PMP METRICS
 
 parser = PMPParser() # Includes all default options
 
 parser.add_argument(
-    '-n', '--newarg',
-    dest='newarg',
-    help='description',
-    required=False)
-
-parser.add_argument(
     '--model',
-#   type=ast.literal_eval, #loading in a list 
+    type=ast.literal_eval, # python list 
     dest='model',
-    help='description',
+    help='model or observational data',
+    default=None,
     required=False)
 
 parser.add_argument(
@@ -33,19 +35,6 @@ parser.add_argument(
     dest='output_filename_template',
     help='description',
     required=False)
-'''
-parser.add_argument(
-    '--results_dir',
-    type=ast.literal_eval, #loading in a dictionary
-    dest='results_dir',
-    help='description',
-    required=False)
-parser.add_argument(
-    '--mp', '--modpath',
-    dest='modpath',
-    help='description',
-    required=False)
-'''
 
 parser.use('--results_dir')
 parser.use('--modpath')
@@ -64,7 +53,7 @@ parser.add_argument(
 
 parser.add_argument(
     '--variable',
-#   type=ast.literal_eval, #loading in a dictionary
+    type=ast.literal_eval, # python list
     dest='variable',
     help='description',
     required=False)
@@ -85,6 +74,7 @@ start_yr = int(start.split('-')[0])
 end_mo = int(end.split('-')[1])
 end_yr = int(end.split('-')[0])
 
+
 # COMPUTE AND SAVE ANNUAL CYCLE CLIMATOLOGY
 for mod in models:
  for var in variables:
@@ -95,11 +85,19 @@ for mod in models:
 
   f = cdms2.open(pathin)
   d = f(var,time = (cdtime.comptime(start_yr,start_mo),cdtime.comptime(end_yr,end_mo)))
-  print(d.shape)
+  t = d.getTime()
+  c = t.asComponentTime()
+  bm = c[0].year
+  by = c[0].month
+  ey = c[len(c)-1].year
+  em = c[len(c)-1].month
+  print(mod,' ', by,' ',bm,' ',ey,' ',em)
 
   d_ac = cdutil.ANNUALCYCLE.climatology(d)
+# d_djf = cdutil.DJF.climatology(d)
+
   d_ac.id = var
-  print(d_ac.shape)
+  print(d.shape,d_ac.shape)
 
   pathout = results_dir+output_filename_template 
   pathout = pathout.replace('VARIABLE',var)
@@ -109,8 +107,3 @@ for mod in models:
   g.close()
 
 
-
-
-
-
- 

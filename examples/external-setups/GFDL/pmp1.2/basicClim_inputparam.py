@@ -1,7 +1,6 @@
 import datetime
 
-ver = datetime.datetime.now().strftime('v%Y%m%d')
-
+ver = datetime.datetime.now().strftime('v%Y%m%d') #PCMDI versioning
 
 mip = 'cmip6'
 exp = 'historical'  # historical or amip
@@ -9,8 +8,11 @@ latest_xmls = 'v20191126'
 start = '1981-01'
 end = '2006-01'
 
+start_month = 1
+start_year = 1981
+end_month = 1
+end_year = 2006
 
-ver = datetime.datetime.now().strftime('v%Y%m%d')
 
 modpath = '/p/user_pub/pmp/pmp_results/pmp_v1.1.2/additional_xmls/latest/' + latest_xmls + '/' + mip + '/' + exp + '/atmos/mon/VARIABLE/'
 
