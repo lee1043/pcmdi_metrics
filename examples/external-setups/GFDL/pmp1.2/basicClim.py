@@ -94,7 +94,7 @@ for mod in models:
   print(mod,' ', by,' ',bm,' ',ey,' ',em)
 
   d_ac = cdutil.ANNUALCYCLE.climatology(d)
-# d_djf = cdutil.DJF.climatology(d)
+# d_djf = cdutil.DJF.climatology(d) # Available for all seasons and months
 
   d_ac.id = var
   print(d.shape,d_ac.shape)
