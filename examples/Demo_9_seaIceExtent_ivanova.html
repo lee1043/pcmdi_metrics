@@ -1,0 +1,3290 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>9A. Sea Ice &#8212; PMP Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=30646c52"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/Demo_9_seaIceExtent_ivanova';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="9B. Sea Ice Supplementary" href="Demo_9b_seaIce_data_explore.html" />
+    <link rel="prev" title="8. Extremes Metrics" href="Demo_8_extremes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/PMPLogo_500x421px_72dpi.png" class="logo__image only-light" alt="PMP Documentation - Home"/>
+    <img src="../_static/PMPLogo_500x421px_72dpi.png" class="logo__image only-dark pst-js-only" alt="PMP Documentation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">For users:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../start.html">Getting Started</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../supporting-data.html">Retrieving data for demos and use of the PMP</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../metrics.html">PMP Metrics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_mean-clim.html">Mean Climate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_enso.html">ENSO Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_mov.html">Extra-tropical modes of variability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_mjo.html">MJO baseline metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_monsoon.html">Monsoon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_ext.html">Extremes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_precip-variability.html">Precipitation Variability Across Timescales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_precip-distribution.html">Precipitation Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_subdaily-precipitation.html">Sub-daily precipitation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_sea_ice.html">Sea Ice</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/PCMDI/pcmdi_metrics/blob/main/pcmdi_metrics/cloud_feedback/README.md">Cloud Feedbacks</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../metrics-demo.html">Demo notebooks</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Demo_0_download_data.html">0. Prepare Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_1a_compute_climatologies.html">1A. Compute Climatologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_1b_mean_climate.html">1B. Mean Climate Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_2a_monsoon_wang.html">2A. Monsoon (Wang)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_2b_monsoon_sperber.html">2B. Monsoon (Sperber)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_3_diurnal_cycle.html">3. Diurnal Cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_4_modes_of_variability.html">4. Modes of Variability</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="Demo_5_mjo_metrics.html">5. MJO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_6_ENSO.html">6. ENSO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_7_precip_variability.html">7. Precipitation Variability Across Timescales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_8_extremes.html">8. Extremes Metrics</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">9A. Sea Ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_9b_seaIce_data_explore.html">9B. Sea Ice Supplementary</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference external" href="https://pcmdi.llnl.gov/research/metrics/">Results</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">For developers/contributors:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing Guide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../resources.html">Resources</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.xcdat_open.html">pcmdi_metrics.io.xcdat_open</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.create_land_sea_mask.html">pcmdi_metrics.utils.create_land_sea_mask</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.apply_landmask.html">pcmdi_metrics.utils.apply_landmask</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.apply_oceanmask.html">pcmdi_metrics.utils.apply_oceanmask</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.create_target_grid.html">pcmdi_metrics.utils.create_target_grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.regrid.html">pcmdi_metrics.utils.regrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.custom_season_average.html">pcmdi_metrics.utils.custom_season_average</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.custom_season_departure.html">pcmdi_metrics.utils.custom_season_departure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.region_subset.html">pcmdi_metrics.io.region_subset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.region_from_file.html">pcmdi_metrics.io.region_from_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_grid.html">pcmdi_metrics.io.get_grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_axis_list.html">pcmdi_metrics.io.get_axis_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_data_list.html">pcmdi_metrics.io.get_data_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_latitude.html">pcmdi_metrics.io.get_latitude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_latitude_bounds.html">pcmdi_metrics.io.get_latitude_bounds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_latitude_key.html">pcmdi_metrics.io.get_latitude_key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_longitude.html">pcmdi_metrics.io.get_longitude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_longitude_bounds.html">pcmdi_metrics.io.get_longitude_bounds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_longitude_key.html">pcmdi_metrics.io.get_longitude_key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_time.html">pcmdi_metrics.io.get_time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_time_bounds.html">pcmdi_metrics.io.get_time_bounds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_time_bounds_key.html">pcmdi_metrics.io.get_time_bounds_key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_time_key.html">pcmdi_metrics.io.get_time_key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.select_subset.html">pcmdi_metrics.io.select_subset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.check_daily_time_axis.html">pcmdi_metrics.utils.check_daily_time_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.check_monthly_time_axis.html">pcmdi_metrics.utils.check_monthly_time_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.regenerate_time_axis.html">pcmdi_metrics.utils.regenerate_time_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.sort_human.html">pcmdi_metrics.utils.sort_human</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.fill_template.html">pcmdi_metrics.utils.fill_template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.tree.html">pcmdi_metrics.utils.tree</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../resources_legacy.html">Legacy archive</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../pmp-using-cdp-guide.html">PMP using CDP Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pmpparser.html">PMPParser</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/PCMDI/pcmdi_metrics">GitHub repository</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://github.com/PCMDI/pcmdi_metrics/discussions">GitHub discussions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/PCMDI/pcmdi_metrics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/PCMDI/pcmdi_metrics/edit/main/docs/examples/Demo_9_seaIceExtent_ivanova.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/PCMDI/pcmdi_metrics/issues/new?title=Issue%20on%20page%20%2Fexamples/Demo_9_seaIceExtent_ivanova.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/examples/Demo_9_seaIceExtent_ivanova.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>9A. Sea Ice</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#1.-Demo-data">1. Demo data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#1.1-Model-output">1.1 Model output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#1.2-Reference-dataset">1.2 Reference dataset</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#2.-Sectors">2. Sectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#3.-Basic-example">3. Basic example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#3.1-Introducing-the-PCMDI-Metrics-Package-(PMP)-parameter-file">3.1 Introducing the PCMDI Metrics Package (PMP) parameter file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#3.2-Introducing-the-PMP-driver-file">3.2 Introducing the PMP driver file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#3.3-Running-the-PMP-sea-ice-demo">3.3 Running the PMP sea ice demo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#4.-Working-with-multiple-realizations">4. Working with multiple realizations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#5.-Working-with-multiple-models">5. Working with multiple models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#6.-Further-exploration">6. Further exploration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#7.-Debugging-the-LLNL-Nimbus-binder-environment">7. Debugging the LLNL Nimbus binder environment</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="9A.-Sea-Ice">
+<h1>9A. Sea Ice<a class="headerlink" href="#9A.-Sea-Ice" title="Link to this heading">#</a></h1>
+<div style="text-align: right"><p><p><img alt="Program for Climate Model Diagnosis and Intercomparison" class="fixed-height-image no-scaled-link" src="https://pcmdi.github.io/assets/PCMDI/199x65px-PCMDI-Logo-Text-rectangle.png" style="width: 91px; height: 30px;" />  <img alt="Lawrence Livermore National Laboratory" class="fixed-height-image no-scaled-link" src="https://pcmdi.github.io/assets/LLNL/212px-LLNLiconPMS286-WHITEBACKGROUND.png" style="width: 30px; height: 30px;" />  <img alt="United States Department of Energy" class="fixed-height-image no-scaled-link" src="https://pcmdi.github.io/assets/DOE/459x127px-DOE-Logo_Color_TextOnly.png" style="width: 108px; height: 30px;" />  <img alt="Earth System Grid Federation 2 - US Consortium" class="fixed-height-image no-scaled-link" src="https://pcmdi.github.io/assets/ESGF2-US/390x202px-ESGF2-US_logo_transparent_word-crop.png" style="width: 57px; height: 30px;" /></p>
+</p></div><div class="line-block">
+<div class="line"><strong>Summary</strong></div>
+<div class="line">The PCMDI Metrics Package (PMP) sea ice driver produces metrics that compare modeled and observed sea ice extent focusing on its annual cycle. This notebook demonstrates how to run the PMP sea ice code.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Authors</strong></div>
+<div class="line">Ana Ordonez, Jiwoo Lee, Paul Durack, Peter Gleckler (<a class="reference external" href="https://pcmdi.llnl.gov/">PCMDI</a>, <a class="reference external" href="https://www.llnl.gov/">Lawrence Livermore National Laboratory</a>)</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Reference</strong></div>
+<div class="line">Ivanova, D. P., P. J. Gleckler, K. E. Taylor, P. J. Durack, and K. D. Marvel, 2016: Moving beyond the Total Sea Ice Extent in Gauging Model Biases. <em>J. Climate</em>, <strong>29</strong>, Pp 8965–8987, <a class="reference external" href="https://doi.org/10.1175/JCLI-D-16-0026.1">https://doi.org/10.1175/JCLI-D-16-0026.1</a>.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>Notes</strong></div>
+<div class="line">The installation instructions for the PMP can be found <a class="reference external" href="http://pcmdi.github.io/pcmdi_metrics/install.html">here</a>. The documentation for the sea ice metrics can be found <a class="reference external" href="http://pcmdi.github.io/pcmdi_metrics/metrics_sea_ice.html">here</a>.</div>
+</div>
+<p><strong>Table of Contents</strong></p>
+<p>Note: Links to the sections work best when viewing this notebook via <a class="reference external" href="https://nbviewer.org/github/PCMDI/pcmdi_metrics/blob/main/doc/jupyter/Demo/Demo_9_seaIceExtent_ivanova.ipynb">nbviewer</a>. - 1. Demo data * 1.1 Model output * 1.2 Reference dataset - 2. Sectors - 3. Basic
+Example * 3.1.1 Introducing the PMP parameter file * 3.1.2 Introducing the PMP driver file * 3.1.2 Running the PMP sea ice demo - 4. Working with multiple realizations - 5. Working with multiple models - 6. Further
+exploration - 7. Debugging the LLNL Nimbus binder environment</p>
+<section id="1.-Demo-data">
+<h2>1. Demo data<a class="headerlink" href="#1.-Demo-data" title="Link to this heading">#</a></h2>
+<section id="1.1-Model-output">
+<h3>1.1 Model output<a class="headerlink" href="#1.1-Model-output" title="Link to this heading">#</a></h3>
+<p>This demo uses three CMIP6 models. The Sea-Ice Area Percentage (Ocean Grid; ‘siconc’) and Grid-Cell Area for Ocean Variables (‘areacello’) variables are needed and can be found in the following directories. In addition, six other models are available that can be added to the analyses in this demo:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/p/user_pub/pmp/demo/sea-ice/links_siconc
+/p/user_pub/pmp/demo/sea-ice/links_area
+</pre></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>/p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_185001-185912.nc
+siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_186001-186912.nc
+siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_187001-187912.nc
+siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_188001-188912.nc
+siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_189001-189912.nc
+siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_190001-190912.nc
+siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_191001-191912.nc
+siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_192001-192912.nc
+siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_193001-193912.nc
+siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_194001-194912.nc
+siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_195001-195912.nc
+siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_196001-196912.nc
+siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_197001-197912.nc
+siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_198001-198912.nc
+siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_199001-199912.nc
+siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_200001-200912.nc
+siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_201001-201112.nc
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>/p/user_pub/pmp/demo/sea-ice/links_area/E3SM-1-0/
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+areacello_Ofx_E3SM-1-0_historical_r1i1p1f1_gr.nc
+</pre></div></div>
+</div>
+</section>
+<section id="1.2-Reference-dataset">
+<h3>1.2 Reference dataset<a class="headerlink" href="#1.2-Reference-dataset" title="Link to this heading">#</a></h3>
+<p>The observational dataset provided is the satellite derived sea ice concentration dataset from EUMETSAT OSI-SAF. More data information can be found at the <a class="reference external" href="https://osi-saf.eumetsat.int/products/osi-450-a">osi-450-a product page</a>. The path to this data is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/p/user_pub/pmp/demo/sea-ice/EUMETSAT
+</pre></div>
+</div>
+<p>The original data was post-processed for the PMP and the processed data can be downloaded by running <a class="reference internal" href="Demo_0_download_data.html"><span class="doc">Demo_0_download_data.ipynb</span></a></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls<span class="w"> </span>/p/user_pub/pmp/demo/sea-ice/EUMETSAT/OSI-SAF-450-a-3-0/v20231201
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ice_conc_nh_ease2-250_cdr-v3p0_198801-202012.nc
+ice_conc_sh_ease2-250_cdr-v3p0_198801-202012.nc
+</pre></div></div>
+</div>
+<p><strong>NOTE</strong> Further exploration of the above datasets can be found in our supplemental Jupyter notebook: <a class="reference internal" href="Demo_9b_seaIce_data_explore.html"><span class="doc">Demo_9b_seaIce_data_explore.ipynb</span></a></p>
+</section>
+</section>
+<section id="2.-Sectors">
+<h2>2. Sectors<a class="headerlink" href="#2.-Sectors" title="Link to this heading">#</a></h2>
+<p>This code block produces maps that show the different regions used in the analysis along with the mean observed (OSI-SAF) sea ice concentration. The code to generate these figures can be found in the script <code class="docutils literal notranslate"><span class="pre">`sea_ice_sector_plots.py</span></code> &lt;sea_ice_sector_plots.py&gt;`__.</p>
+<p>Below process will take about 30 seconds.</p>
+<div align="right"><p>Go back to Top</p>
+</div><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="o">%%</span><span class="n">bash</span>
+<span class="n">python</span> <span class="n">sea_ice_sector_plots</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Creating Arctic map
+Creating Antarctic map
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+[WARNING] yaksa: 10 leaked handle pool objects
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+CPU times: user 5.81 ms, sys: 7.2 ms, total: 13 ms
+Wall time: 25.9 s
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To open and display one of the graphics</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display_png</span><span class="p">,</span> <span class="n">JSON</span><span class="p">,</span> <span class="n">Image</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;Arctic_regions.png&quot;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;Antarctic_regions.png&quot;</span><span class="p">)</span>
+<span class="n">display_png</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_Demo_9_seaIceExtent_ivanova_12_0.png" src="../_images/examples_Demo_9_seaIceExtent_ivanova_12_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_Demo_9_seaIceExtent_ivanova_12_1.png" src="../_images/examples_Demo_9_seaIceExtent_ivanova_12_1.png" />
+</div>
+</div>
+</section>
+<section id="3.-Basic-example">
+<h2>3. Basic example<a class="headerlink" href="#3.-Basic-example" title="Link to this heading">#</a></h2>
+<p>This first case will work with sea ice concentration ouput from a single model, E3SM-1-0. Two overview plots are shown below to visualize the Arctic sea ice evolution over time in this model.</p>
+<p>For this demo, we start the OSI-SAF satellite data in 1988 as that avoids missing data in earlier parts of the record.</p>
+<p>The code to generate these figures can be found in <code class="docutils literal notranslate"><span class="pre">`sea_ice_line_plots.py</span></code> &lt;sea_ice_line_plots.py&gt;`__.</p>
+<p>Below process will take about 15 seconds.</p>
+<div align="right"><p>Go back to Top</p>
+</div><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="o">%%</span><span class="n">bash</span>
+<span class="n">python</span> <span class="n">sea_ice_line_plots</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+CPU times: user 3.44 ms, sys: 4.66 ms, total: 8.1 ms
+Wall time: 25.1 s
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;Arctic_tseries.png&quot;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;Arctic_clim.png&quot;</span><span class="p">)</span>
+<span class="n">display_png</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_Demo_9_seaIceExtent_ivanova_17_0.png" src="../_images/examples_Demo_9_seaIceExtent_ivanova_17_0.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_Demo_9_seaIceExtent_ivanova_17_1.png" src="../_images/examples_Demo_9_seaIceExtent_ivanova_17_1.png" />
+</div>
+</div>
+<section id="3.1-Introducing-the-PCMDI-Metrics-Package-(PMP)-parameter-file">
+<h3>3.1 Introducing the PCMDI Metrics Package (PMP) parameter file<a class="headerlink" href="#3.1-Introducing-the-PCMDI-Metrics-Package-(PMP)-parameter-file" title="Link to this heading">#</a></h3>
+<p>The PMP drivers can all read user arguments from parameter files. We provide a demo parameter file, which is shown below. Comments (beginning with a ‘#’) explain each of the parameters.</p>
+<div align="right"><p>Go back to Top</p>
+</div><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;sea_ice_param.py&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+# Sea ice metrics parameter file
+
+# Settings for models
+# --------------------
+# List of models to include in analysis
+test_data_set = [
+    &#34;E3SM-1-0&#34;,
+]
+
+# realization can be a single realization, a list of realizations, or &#34;*&#34; for all realizations
+realization = &#34;r1i2p2f1&#34;
+
+# test_data_path is a template for the model data parent directory
+test_data_path = &#34;/p/user_pub/pmp/demo/sea-ice/links_siconc/%(model)/historical/%(realization)/siconc/&#34;
+
+# filename_template is a template for the model data file name
+# combine it with test_data_path to get complete data path
+filename_template = &#34;siconc_SImon_%(model)_historical_%(realization)_*_*.nc&#34;
+
+# The name of the sea ice variable in the model data
+var = &#34;siconc&#34;
+
+# Start and end years for model data
+msyear = 1981
+meyear = 2010
+
+# Factor for adjusting model data to decimal rather than percent units
+ModUnitsAdjust = (True, &#34;multiply&#34;, 1e-2)
+
+# Template for the grid area file
+area_template = &#34;/p/user_pub/pmp/demo/sea-ice/links_area/%(model)/*.nc&#34;
+
+# Area variable name; likely &#39;areacello&#39; or &#39;areacella&#39; for CMIP6
+area_var = &#34;areacello&#34;
+
+# Factor to convert area units to km-2
+AreaUnitsAdjust = (True, &#34;multiply&#34;, 1e-6)
+
+# Directory for writing outputs
+case_id = &#34;ex1&#34;
+metrics_output_path = &#34;sea_ice_demo/%(case_id)/&#34;
+
+# Settings for the observational data
+# ------------------------------------
+# Paths to northern and southern hemisphere files
+reference_data_path_nh = &#34;/p/user_pub/pmp/demo/sea-ice/EUMETSAT/OSI-SAF-450-a-3-0/v20231201/ice_conc_nh_ease2-250_cdr-v3p0_198801-202012.nc&#34;
+reference_data_path_sh = &#34;/p/user_pub/pmp/demo/sea-ice/EUMETSAT/OSI-SAF-450-a-3-0/v20231201/ice_conc_sh_ease2-250_cdr-v3p0_198801-202012.nc&#34;
+
+# Factor for adjusting obs data to decimal rather than percent units
+ObsUnitsAdjust = (True, &#34;multiply&#34;, 1e-2)
+
+# Name of reference data
+reference_data_set = &#34;OSI-SAF&#34;
+
+# Start and end years for obs
+osyear = 1988
+oeyear = 2020
+
+# Name of sea ice concentration variable
+obs_var = &#34;ice_conc&#34;
+
+# Factor to convert area units to km-2
+ObsAreaUnitsAdjust = (False, 0, 0)
+
+# In this case there is no obs area file, so these are None
+obs_area_template = None
+obs_area_var = None
+
+# Because there is no obs area file and this data
+# uses an equal-area grid, we provide the
+# fixed grid cell area value in km2 units
+obs_cell_area = 625  # km 2
+
+</pre></div></div>
+</div>
+<p>To see all of the parameters available for the sea ice metrics, run the –help command as shown here:</p>
+</section>
+<section id="3.2-Introducing-the-PMP-driver-file">
+<h3>3.2 Introducing the PMP driver file<a class="headerlink" href="#3.2-Introducing-the-PMP-driver-file" title="Link to this heading">#</a></h3>
+<div align="right"><p>Go back to Top</p>
+</div><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-bash notranslate"><div class="highlight"><pre><span></span>%%bash
+sea_ice_driver.py<span class="w"> </span>--help
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+usage: sea_ice_driver.py [-h] [--parameters PARAMETERS]
+                         [--diags OTHER_PARAMETERS [OTHER_PARAMETERS ...]]
+                         [--case_id CASE_ID] [-v VAR] [--obs_var OBS_VAR]
+                         [--area_var AREA_VAR] [--obs_area_var OBS_AREA_VAR]
+                         [-r REFERENCE_DATA_SET [REFERENCE_DATA_SET ...]]
+                         [--reference_data_path_nh REFERENCE_DATA_PATH_NH]
+                         [--reference_data_path_sh REFERENCE_DATA_PATH_SH]
+                         [-t TEST_DATA_SET [TEST_DATA_SET ...]]
+                         [--test_data_path TEST_DATA_PATH]
+                         [--realization REALIZATION]
+                         [--filename_template FILENAME_TEMPLATE]
+                         [--metrics_output_path METRICS_OUTPUT_PATH]
+                         [--filename_output_template FILENAME_OUTPUT_TEMPLATE]
+                         [--area_template AREA_TEMPLATE]
+                         [--obs_area_template_nh OBS_AREA_TEMPLATE_NH]
+                         [--obs_area_template_sh OBS_AREA_TEMPLATE_SH]
+                         [--obs_cell_area OBS_CELL_AREA]
+                         [--output_json_template OUTPUT_JSON_TEMPLATE]
+                         [--debug] [--plots] [--osyear OSYEAR]
+                         [--msyear MSYEAR] [--oeyear OEYEAR] [--meyear MEYEAR]
+                         [--ObsUnitsAdjust OBSUNITSADJUST]
+                         [--ModUnitsAdjust MODUNITSADJUST]
+                         [--AreaUnitsAdjust AREAUNITSADJUST]
+                         [--ObsAreaUnitsAdjust OBSAREAUNITSADJUST]
+                         [--plot PLOT]
+
+options:
+  -h, --help            show this help message and exit
+  --parameters PARAMETERS, -p PARAMETERS
+  --diags OTHER_PARAMETERS [OTHER_PARAMETERS ...], -d OTHER_PARAMETERS [OTHER_PARAMETERS ...]
+                        Path to other user-defined parameter file. (default:
+                        None)
+  --case_id CASE_ID     Defines a subdirectory to the metrics output, so
+                        multiplecases can be compared (default: None)
+  -v VAR, --var VAR     Name of model sea ice concentration variable (default:
+                        None)
+  --obs_var OBS_VAR     Name of obs sea ice concentration variable (default:
+                        None)
+  --area_var AREA_VAR   Name of model area variable (default: None)
+  --obs_area_var OBS_AREA_VAR
+                        Name of reference data area variable (default: None)
+  -r REFERENCE_DATA_SET [REFERENCE_DATA_SET ...], --reference_data_set REFERENCE_DATA_SET [REFERENCE_DATA_SET ...]
+                        List of observations or models that are used as a
+                        reference against the test_data_set (default: None)
+  --reference_data_path_nh REFERENCE_DATA_PATH_NH
+                        Path for the reference climatologies for southern
+                        hemisphere (default: None)
+  --reference_data_path_sh REFERENCE_DATA_PATH_SH
+                        Path for the reference climatologies for northern
+                        hemisphere (default: None)
+  -t TEST_DATA_SET [TEST_DATA_SET ...], --test_data_set TEST_DATA_SET [TEST_DATA_SET ...]
+                        List of observations or models to test against the
+                        reference_data_set (default: None)
+  --test_data_path TEST_DATA_PATH
+                        Path for the test climitologies (default: None)
+  --realization REALIZATION
+                        A simulation parameter (default: None)
+  --filename_template FILENAME_TEMPLATE
+                        Template for climatology files (default: None)
+  --metrics_output_path METRICS_OUTPUT_PATH
+                        Directory of where to put the results (default: None)
+  --filename_output_template FILENAME_OUTPUT_TEMPLATE
+                        Filename for the interpolated test climatologies
+                        (default: None)
+  --area_template AREA_TEMPLATE
+                        Filename template for model grid area (default: None)
+  --obs_area_template_nh OBS_AREA_TEMPLATE_NH
+                        Filename template for obs grid area in Northern
+                        Hemisphere (default: None)
+  --obs_area_template_sh OBS_AREA_TEMPLATE_SH
+                        Filename template for obs grid area in Southern
+                        Hemisphere (default: None)
+  --obs_cell_area OBS_CELL_AREA
+                        For equal area grids, the cell area in km (default:
+                        None)
+  --output_json_template OUTPUT_JSON_TEMPLATE
+                        Filename template for results json files (default:
+                        None)
+  --debug               Turn on debugging mode by printing more information to
+                        track progress (default: False)
+  --plots               Set to True to generate figures. (default: False)
+  --osyear OSYEAR       Start year for reference data set (default: None)
+  --msyear MSYEAR       Start year for model data set (default: None)
+  --oeyear OEYEAR       End year for reference data set (default: None)
+  --meyear MEYEAR       End year for model data set (default: None)
+  --ObsUnitsAdjust OBSUNITSADJUST
+                        Factor to convert obs sea ice concentration to
+                        decimal. For example: - (True, &#39;divide&#39;, 100.0) #
+                        percentage to decimal - (False, 0, 0) # No adjustment
+                        (default) (default: (False, 0, 0))
+  --ModUnitsAdjust MODUNITSADJUST
+                        Factor to convert model sea ice concentration to
+                        decimal. For example: - (True, &#39;divide&#39;, 100.0) #
+                        percentage to decimal - (False, 0, 0) # No adjustment
+                        (default) (default: (False, 0, 0))
+  --AreaUnitsAdjust AREAUNITSADJUST
+                        Factor to convert area data to km^2. For example: -
+                        (True, &#39;multiply&#39;, 1e-6) # m^2 to km^2 - (False, 0, 0)
+                        # No adjustment (default) (default: (False, 0, 0))
+  --ObsAreaUnitsAdjust OBSAREAUNITSADJUST
+                        Factor to convert area data to km^2. For example: -
+                        (True, &#39;multiply&#39;, 1e-6) # m^2 to km^2 - (False, 0, 0)
+                        # No adjustment (default) (default: (False, 0, 0))
+  --plot PLOT           Option for generate individual plots for models: True
+                        (default) / False (default: True)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+[WARNING] yaksa: 10 leaked handle pool objects
+</pre></div></div>
+</div>
+</section>
+<section id="3.3-Running-the-PMP-sea-ice-demo">
+<h3>3.3 Running the PMP sea ice demo<a class="headerlink" href="#3.3-Running-the-PMP-sea-ice-demo" title="Link to this heading">#</a></h3>
+<p>The PMP drivers are run on the command line. In this Jupyter Notebook, we use the bash cell magic function %%bash to run command line functions from the notebook.</p>
+<p>The PMP sea ice metrics driver call follows the basic format: sea_ice_driver.py -p parameter_file.py –additional arguments</p>
+<p>The following cell runs the driver with the demo parameter file we saw above.</p>
+<p>Below process will take about 3 minutes.</p>
+<div align="right"><p>Go back to Top</p>
+</div><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="o">%%</span><span class="n">bash</span>
+<span class="n">sea_ice_driver</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">p</span> <span class="n">sea_ice_param</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO::2024-04-25 10:44::pcmdi_metrics:: Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/sea_ice_demo/ex1/sea_ice_metrics.json
+2024-04-25 10:44:38,110 [INFO]: base.py(write:251) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/sea_ice_demo/ex1/sea_ice_metrics.json
+2024-04-25 10:44:38,110 [INFO]: base.py(write:251) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/sea_ice_demo/ex1/sea_ice_metrics.json
+INFO::2024-04-25 10:44::pcmdi_metrics:: Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/sea_ice_demo/ex1/sea_ice_data.json
+2024-04-25 10:44:51,616 [INFO]: base.py(write:251) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/sea_ice_demo/ex1/sea_ice_data.json
+2024-04-25 10:44:51,616 [INFO]: base.py(write:251) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/sea_ice_demo/ex1/sea_ice_data.json
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Model list: [&#39;E3SM-1-0&#39;]
+Find all realizations: False
+OBS: Arctic
+Converting units by  multiply 0.01
+OBS: Antarctic
+Converting units by  multiply 0.01
+Model list: [&#39;E3SM-1-0&#39;]
+/p/user_pub/pmp/demo/sea-ice/links_area/E3SM-1-0/*.nc
+Converting units by  multiply 1e-06
+
+-----------------------
+model, run, variable: E3SM-1-0 r1i2p2f1 siconc
+test_data (model in this case) full_path:
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_185001-185912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_186001-186912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_187001-187912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_188001-188912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_189001-189912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_190001-190912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_191001-191912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_192001-192912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_193001-193912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_194001-194912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_195001-195912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_196001-196912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_197001-197912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_198001-198912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_199001-199912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_200001-200912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_201001-201112.nc
+Converting units by  multiply 0.01
+
+-------------------------------------------
+Calculating model regional average metrics
+for  E3SM-1-0
+--------------------------------------------
+arctic
+ca
+na
+np
+antarctic
+sp
+sa
+io
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+[WARNING] yaksa: 10 leaked handle pool objects
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+CPU times: user 39.6 ms, sys: 13 ms, total: 52.6 ms
+Wall time: 3min
+</pre></div></div>
+</div>
+<p>One of the primary outputs of the PMP is a JSON file containing the metrics values. In this case, the metrics are the mean square errors of the time mean and monthly mean ice extent. Ice extent is defined as the total area covered by sea ice concentration of &gt;= 15%. The metrics are organized by model, realization, and reference dataset.</p>
+<p>The metrics JSON from this run is displayed below.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;sea_ice_demo/ex1/sea_ice_metrics.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{
+    &#34;DIMENSIONS&#34;: {
+        &#34;index&#34;: {
+            &#34;monthly_clim&#34;: &#34;Monthly climatology of extent&#34;,
+            &#34;total_extent&#34;: &#34;Sum of ice coverage where concentration &gt; 15%&#34;
+        },
+        &#34;json_structure&#34;: [
+            &#34;region&#34;,
+            &#34;realization&#34;,
+            &#34;obs&#34;,
+            &#34;index&#34;,
+            &#34;statistic&#34;
+        ],
+        &#34;model&#34;: [
+            &#34;E3SM-1-0&#34;
+        ],
+        &#34;region&#34;: [
+            &#34;arctic&#34;,
+            &#34;ca&#34;,
+            &#34;na&#34;,
+            &#34;np&#34;,
+            &#34;antarctic&#34;,
+            &#34;io&#34;,
+            &#34;sa&#34;,
+            &#34;sp&#34;
+        ],
+        &#34;statistic&#34;: {
+            &#34;mse&#34;: &#34;Mean Square Error (10^12 km^4)&#34;
+        }
+    },
+    &#34;RESULTS&#34;: {
+        &#34;E3SM-1-0&#34;: {
+            &#34;antarctic&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.3224829985071201&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.21094145964623673&#34;
+                        }
+                    }
+                },
+                &#34;r1i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.3224829985071201&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.21094145964623673&#34;
+                        }
+                    }
+                }
+            },
+            &#34;arctic&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;1.2997445969100572&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;2.030507158527881&#34;
+                        }
+                    }
+                },
+                &#34;r1i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;1.2997445969100572&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;2.030507158527881&#34;
+                        }
+                    }
+                }
+            },
+            &#34;ca&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.05035142426809447&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;4.1785016078305246e-05&#34;
+                        }
+                    }
+                },
+                &#34;r1i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.05035142426809447&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;4.1785016078305246e-05&#34;
+                        }
+                    }
+                }
+            },
+            &#34;io&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.04058821765045104&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.01237930945282938&#34;
+                        }
+                    }
+                },
+                &#34;r1i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.04058821765045104&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.01237930945282938&#34;
+                        }
+                    }
+                }
+            },
+            &#34;na&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.5678330040810853&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.9514249147235673&#34;
+                        }
+                    }
+                },
+                &#34;r1i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.5678330040810853&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.9514249147235673&#34;
+                        }
+                    }
+                }
+            },
+            &#34;np&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.26983353803307286&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.21846457619506263&#34;
+                        }
+                    }
+                },
+                &#34;r1i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.26983353803307286&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.21846457619506263&#34;
+                        }
+                    }
+                }
+            },
+            &#34;sa&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.0823791567667957&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.30289427422253834&#34;
+                        }
+                    }
+                },
+                &#34;r1i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.0823791567667957&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.30289427422253834&#34;
+                        }
+                    }
+                }
+            },
+            &#34;sp&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.5695004447566266&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.044574352751696585&#34;
+                        }
+                    }
+                },
+                &#34;r1i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.5695004447566266&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.044574352751696585&#34;
+                        }
+                    }
+                }
+            }
+        }
+    },
+    &#34;json_structure&#34;: [
+        &#34;region&#34;,
+        &#34;realization&#34;,
+        &#34;obs&#34;,
+        &#34;index&#34;,
+        &#34;statistic&#34;
+    ],
+    &#34;json_version&#34;: 3.0,
+    &#34;model_year_range&#34;: {
+        &#34;E3SM-1-0&#34;: [
+            &#34;1981&#34;,
+            &#34;2010&#34;
+        ]
+    },
+    &#34;provenance&#34;: {
+        &#34;commandLine&#34;: &#34;/home/ordonez4/miniconda3/envs/pmp_si_test_2/bin/sea_ice_driver.py -p sea_ice_param.py&#34;,
+        &#34;conda&#34;: {
+            &#34;Platform&#34;: &#34;linux-64&#34;,
+            &#34;PythonVersion&#34;: &#34;3.8.15.final.0&#34;,
+            &#34;Version&#34;: &#34;23.1.0&#34;,
+            &#34;buildVersion&#34;: &#34;not installed&#34;
+        },
+        &#34;date&#34;: &#34;2024-04-25 10:44:23&#34;,
+        &#34;openGL&#34;: {
+            &#34;GLX&#34;: {
+                &#34;client&#34;: {},
+                &#34;server&#34;: {}
+            }
+        },
+        &#34;osAccess&#34;: false,
+        &#34;packages&#34;: {
+            &#34;PMP&#34;: &#34;v3.0.2-11-g06b151f&#34;,
+            &#34;PMPObs&#34;: &#34;See &#39;References&#39; key below, for detailed obs provenance information.&#34;,
+            &#34;blas&#34;: &#34;0.3.27&#34;,
+            &#34;cdat_info&#34;: &#34;8.2.1&#34;,
+            &#34;cdms&#34;: &#34;3.1.5&#34;,
+            &#34;cdp&#34;: &#34;1.7.0&#34;,
+            &#34;cdtime&#34;: &#34;3.1.4&#34;,
+            &#34;cdutil&#34;: &#34;8.2.1&#34;,
+            &#34;clapack&#34;: null,
+            &#34;esmf&#34;: &#34;0.8.5&#34;,
+            &#34;esmpy&#34;: &#34;8.6.0&#34;,
+            &#34;genutil&#34;: &#34;8.2.1&#34;,
+            &#34;lapack&#34;: &#34;3.9.0&#34;,
+            &#34;matplotlib&#34;: null,
+            &#34;mesalib&#34;: null,
+            &#34;numpy&#34;: &#34;1.23.5&#34;,
+            &#34;python&#34;: &#34;3.10.14&#34;,
+            &#34;scipy&#34;: &#34;1.13.0&#34;,
+            &#34;uvcdat&#34;: null,
+            &#34;vcs&#34;: null,
+            &#34;vtk&#34;: null,
+            &#34;xarray&#34;: &#34;2024.3.0&#34;,
+            &#34;xcdat&#34;: &#34;0.7.0&#34;
+        },
+        &#34;platform&#34;: {
+            &#34;Name&#34;: &#34;gates.llnl.gov&#34;,
+            &#34;OS&#34;: &#34;Linux&#34;,
+            &#34;Version&#34;: &#34;3.10.0-1160.108.1.el7.x86_64&#34;
+        },
+        &#34;userId&#34;: &#34;ordonez4&#34;
+    }
+}
+</pre></div></div>
+</div>
+<p>This driver also outputs a bar chart that visualizes the mean square error between the model and observations. Since there is only one model and one realization in this instance, the bar chart looks very simple. The red bar indicates the mean square error for the time mean ice extent, and the blue bar indicates the mean square error for the climatological ice extent.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls<span class="w"> </span><span class="o">{</span><span class="s2">&quot;sea_ice_demo/ex1/MSE_bar_chart.png&quot;</span><span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+sea_ice_demo/ex1/MSE_bar_chart.png
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;sea_ice_demo/ex1/MSE_bar_chart.png&quot;</span><span class="p">)</span>
+<span class="n">display_png</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_Demo_9_seaIceExtent_ivanova_33_0.png" src="../_images/examples_Demo_9_seaIceExtent_ivanova_33_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="4.-Working-with-multiple-realizations">
+<h2>4. Working with multiple realizations<a class="headerlink" href="#4.-Working-with-multiple-realizations" title="Link to this heading">#</a></h2>
+<p>The sea ice driver can generate metrics based on an average of all available realizations. To do so, provide an asterisk * as the value to the –realization argument on the command line. Options passed on the command line will supercede arguments in the parameter file.</p>
+<p>In addition, we set the –case_id value to ‘ex2’ to save results in a new directory.</p>
+<p>Below process will take about 5 minutes.</p>
+<div align="right"><p>Go back to Top</p>
+</div><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="o">%%</span><span class="n">bash</span>
+<span class="n">sea_ice_driver</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">p</span> <span class="n">sea_ice_param</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">realization</span> <span class="s1">&#39;*&#39;</span> <span class="o">--</span><span class="n">case_id</span> <span class="s2">&quot;ex2&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Model list: [&#39;E3SM-1-0&#39;]
+Find all realizations: True
+OBS: Arctic
+Converting units by  multiply 0.01
+OBS: Antarctic
+Converting units by  multiply 0.01
+Model list: [&#39;E3SM-1-0&#39;]
+
+=================================
+model, runs: E3SM-1-0 [&#39;r1i2p2f1&#39;, &#39;r2i2p2f1&#39;, &#39;r3i2p2f1&#39;, &#39;r4i2p2f1&#39;]
+/p/user_pub/pmp/demo/sea-ice/links_area/E3SM-1-0/*.nc
+Converting units by  multiply 1e-06
+
+-----------------------
+model, run, variable: E3SM-1-0 r1i2p2f1 siconc
+test_data (model in this case) full_path:
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_185001-185912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_186001-186912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_187001-187912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_188001-188912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_189001-189912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_190001-190912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_191001-191912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_192001-192912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_193001-193912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_194001-194912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_195001-195912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_196001-196912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_197001-197912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_198001-198912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_199001-199912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_200001-200912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_201001-201112.nc
+Converting units by  multiply 0.01
+
+-----------------------
+model, run, variable: E3SM-1-0 r2i2p2f1 siconc
+test_data (model in this case) full_path:
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_185001-185912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_186001-186912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_187001-187912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_188001-188912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_189001-189912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_190001-190912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_191001-191912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_192001-192912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_193001-193912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_194001-194912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_195001-195912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_196001-196912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_197001-197912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_198001-198912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_199001-199912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_200001-200912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_201001-201312.nc
+Converting units by  multiply 0.01
+
+-----------------------
+model, run, variable: E3SM-1-0 r3i2p2f1 siconc
+test_data (model in this case) full_path:
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_185001-185912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_186001-186912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_187001-187912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_188001-188912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_189001-189912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_190001-190912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_191001-191912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_192001-192912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_193001-193912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_194001-194912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_195001-195912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_196001-196912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_197001-197912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_198001-198912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_199001-199912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_200001-200912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_201001-201412.nc
+Converting units by  multiply 0.01
+
+-----------------------
+model, run, variable: E3SM-1-0 r4i2p2f1 siconc
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO::2024-04-25 10:52::pcmdi_metrics:: Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/sea_ice_demo/ex2/sea_ice_metrics.json
+2024-04-25 10:52:04,534 [INFO]: base.py(write:251) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/sea_ice_demo/ex2/sea_ice_metrics.json
+2024-04-25 10:52:04,534 [INFO]: base.py(write:251) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/sea_ice_demo/ex2/sea_ice_metrics.json
+INFO::2024-04-25 10:52::pcmdi_metrics:: Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/sea_ice_demo/ex2/sea_ice_data.json
+2024-04-25 10:52:17,776 [INFO]: base.py(write:251) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/sea_ice_demo/ex2/sea_ice_data.json
+2024-04-25 10:52:17,776 [INFO]: base.py(write:251) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/sea_ice_demo/ex2/sea_ice_data.json
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+test_data (model in this case) full_path:
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_185001-185912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_186001-186912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_187001-187912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_188001-188912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_189001-189912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_190001-190912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_191001-191912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_192001-192912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_193001-193912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_194001-194912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_195001-195912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_196001-196912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_197001-197912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_198001-198912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_199001-199912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_200001-200912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_201001-201412.nc
+Converting units by  multiply 0.01
+
+-------------------------------------------
+Calculating model regional average metrics
+for  E3SM-1-0
+--------------------------------------------
+arctic
+ca
+na
+np
+antarctic
+sp
+sa
+io
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+[WARNING] yaksa: 10 leaked handle pool objects
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+CPU times: user 84.8 ms, sys: 31.3 ms, total: 116 ms
+Wall time: 7min 27s
+</pre></div></div>
+</div>
+<p>Since we have averaged four different realizations (E3SM-1-0: ‘r1i2p2f1’, ‘r2i2p2f1’, ‘r3i2p2f1’, ‘r4i2p2f1’), the resulting statistics are different than seen in example 1. The bar chart now contains markers showing the overall spread among the realizations.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;sea_ice_demo/ex2/MSE_bar_chart.png&quot;</span><span class="p">)</span>
+<span class="n">display_png</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_Demo_9_seaIceExtent_ivanova_39_0.png" src="../_images/examples_Demo_9_seaIceExtent_ivanova_39_0.png" />
+</div>
+</div>
+</section>
+<section id="5.-Working-with-multiple-models">
+<h2>5. Working with multiple models<a class="headerlink" href="#5.-Working-with-multiple-models" title="Link to this heading">#</a></h2>
+<p>Along with using multiple realizations, we can include multiple models in a single analysis. The model data must all follow a single filename template. All model inputs must use the same name and units for the sea ice variable.</p>
+<p>The example below shows how to use three models in the analysis, with all available realizations. The models are listed as inputs to the –test_data_set flag.</p>
+<p>Want to add more models? Six other model sea ice datasets are available in the directories linked in the notebook introduction.</p>
+<p>Below process will take about 10 minutes.</p>
+<div align="right"><p>Go back to Top</p>
+</div><div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="o">%%</span><span class="n">bash</span>
+<span class="n">sea_ice_driver</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">p</span> <span class="n">sea_ice_param</span><span class="o">.</span><span class="n">py</span> \
+<span class="o">--</span><span class="n">test_data_set</span> <span class="s2">&quot;E3SM-1-0&quot;</span> <span class="s2">&quot;CanESM5&quot;</span> <span class="s2">&quot;MIROC6&quot;</span> \
+<span class="o">--</span><span class="n">realization</span> <span class="s1">&#39;*&#39;</span> \
+<span class="o">--</span><span class="n">case_id</span> <span class="s2">&quot;ex3&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Model list: [&#39;E3SM-1-0&#39;, &#39;CanESM5&#39;, &#39;MIROC6&#39;]
+Find all realizations: True
+OBS: Arctic
+Converting units by  multiply 0.01
+OBS: Antarctic
+Converting units by  multiply 0.01
+Model list: [&#39;CanESM5&#39;, &#39;E3SM-1-0&#39;, &#39;MIROC6&#39;]
+
+=================================
+model, runs: CanESM5 [&#39;r2i1p1f1&#39;, &#39;r1i1p1f1&#39;, &#39;r3i1p1f1&#39;]
+/p/user_pub/pmp/demo/sea-ice/links_area/CanESM5/*.nc
+Converting units by  multiply 1e-06
+
+-----------------------
+model, run, variable: CanESM5 r2i1p1f1 siconc
+test_data (model in this case) full_path:
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/CanESM5/historical/r2i1p1f1/siconc/siconc_SImon_CanESM5_historical_r2i1p1f1_gn_185001-201412.nc
+Converting units by  multiply 0.01
+
+-----------------------
+model, run, variable: CanESM5 r1i1p1f1 siconc
+test_data (model in this case) full_path:
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/CanESM5/historical/r1i1p1f1/siconc/siconc_SImon_CanESM5_historical_r1i1p1f1_gn_185001-201412.nc
+Converting units by  multiply 0.01
+
+-----------------------
+model, run, variable: CanESM5 r3i1p1f1 siconc
+test_data (model in this case) full_path:
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/CanESM5/historical/r3i1p1f1/siconc/siconc_SImon_CanESM5_historical_r3i1p1f1_gn_185001-201412.nc
+Converting units by  multiply 0.01
+
+-------------------------------------------
+Calculating model regional average metrics
+for  CanESM5
+--------------------------------------------
+arctic
+ca
+na
+np
+antarctic
+sp
+sa
+io
+
+=================================
+model, runs: E3SM-1-0 [&#39;r1i2p2f1&#39;, &#39;r2i2p2f1&#39;, &#39;r3i2p2f1&#39;, &#39;r4i2p2f1&#39;]
+/p/user_pub/pmp/demo/sea-ice/links_area/E3SM-1-0/*.nc
+Converting units by  multiply 1e-06
+
+-----------------------
+model, run, variable: E3SM-1-0 r1i2p2f1 siconc
+test_data (model in this case) full_path:
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_185001-185912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_186001-186912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_187001-187912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_188001-188912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_189001-189912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_190001-190912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_191001-191912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_192001-192912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_193001-193912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_194001-194912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_195001-195912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_196001-196912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_197001-197912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_198001-198912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_199001-199912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_200001-200912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r1i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r1i2p2f1_gr_201001-201112.nc
+Converting units by  multiply 0.01
+
+-----------------------
+model, run, variable: E3SM-1-0 r2i2p2f1 siconc
+test_data (model in this case) full_path:
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_185001-185912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_186001-186912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_187001-187912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_188001-188912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_189001-189912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_190001-190912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_191001-191912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_192001-192912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_193001-193912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_194001-194912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_195001-195912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_196001-196912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_197001-197912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_198001-198912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_199001-199912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_200001-200912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r2i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r2i2p2f1_gr_201001-201312.nc
+Converting units by  multiply 0.01
+
+-----------------------
+model, run, variable: E3SM-1-0 r3i2p2f1 siconc
+test_data (model in this case) full_path:
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_185001-185912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_186001-186912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_187001-187912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_188001-188912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_189001-189912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_190001-190912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_191001-191912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_192001-192912.nc
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO::2024-04-25 11:08::pcmdi_metrics:: Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/sea_ice_demo/ex3/sea_ice_metrics.json
+2024-04-25 11:08:50,388 [INFO]: base.py(write:251) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/sea_ice_demo/ex3/sea_ice_metrics.json
+2024-04-25 11:08:50,388 [INFO]: base.py(write:251) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/sea_ice_demo/ex3/sea_ice_metrics.json
+INFO::2024-04-25 11:09::pcmdi_metrics:: Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/sea_ice_demo/ex3/sea_ice_data.json
+2024-04-25 11:09:03,719 [INFO]: base.py(write:251) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/sea_ice_demo/ex3/sea_ice_data.json
+2024-04-25 11:09:03,719 [INFO]: base.py(write:251) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/sea_ice_demo/ex3/sea_ice_data.json
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_193001-193912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_194001-194912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_195001-195912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_196001-196912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_197001-197912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_198001-198912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_199001-199912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_200001-200912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r3i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r3i2p2f1_gr_201001-201412.nc
+Converting units by  multiply 0.01
+
+-----------------------
+model, run, variable: E3SM-1-0 r4i2p2f1 siconc
+test_data (model in this case) full_path:
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_185001-185912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_186001-186912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_187001-187912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_188001-188912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_189001-189912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_190001-190912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_191001-191912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_192001-192912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_193001-193912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_194001-194912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_195001-195912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_196001-196912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_197001-197912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_198001-198912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_199001-199912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_200001-200912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/E3SM-1-0/historical/r4i2p2f1/siconc/siconc_SImon_E3SM-1-0_historical_r4i2p2f1_gr_201001-201412.nc
+Converting units by  multiply 0.01
+
+-------------------------------------------
+Calculating model regional average metrics
+for  E3SM-1-0
+--------------------------------------------
+arctic
+ca
+na
+np
+antarctic
+sp
+sa
+io
+
+=================================
+model, runs: MIROC6 [&#39;r2i1p1f1&#39;, &#39;r1i1p1f1&#39;, &#39;r4i1p1f1&#39;, &#39;r3i1p1f1&#39;]
+/p/user_pub/pmp/demo/sea-ice/links_area/MIROC6/*.nc
+Converting units by  multiply 1e-06
+
+-----------------------
+model, run, variable: MIROC6 r2i1p1f1 siconc
+test_data (model in this case) full_path:
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/MIROC6/historical/r2i1p1f1/siconc/siconc_SImon_MIROC6_historical_r2i1p1f1_gn_185001-194912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/MIROC6/historical/r2i1p1f1/siconc/siconc_SImon_MIROC6_historical_r2i1p1f1_gn_195001-201412.nc
+Converting units by  multiply 0.01
+
+-----------------------
+model, run, variable: MIROC6 r1i1p1f1 siconc
+test_data (model in this case) full_path:
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/MIROC6/historical/r1i1p1f1/siconc/siconc_SImon_MIROC6_historical_r1i1p1f1_gn_185001-194912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/MIROC6/historical/r1i1p1f1/siconc/siconc_SImon_MIROC6_historical_r1i1p1f1_gn_195001-201412.nc
+Converting units by  multiply 0.01
+
+-----------------------
+model, run, variable: MIROC6 r4i1p1f1 siconc
+test_data (model in this case) full_path:
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/MIROC6/historical/r4i1p1f1/siconc/siconc_SImon_MIROC6_historical_r4i1p1f1_gn_185001-194912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/MIROC6/historical/r4i1p1f1/siconc/siconc_SImon_MIROC6_historical_r4i1p1f1_gn_195001-201412.nc
+Converting units by  multiply 0.01
+
+-----------------------
+model, run, variable: MIROC6 r3i1p1f1 siconc
+test_data (model in this case) full_path:
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/MIROC6/historical/r3i1p1f1/siconc/siconc_SImon_MIROC6_historical_r3i1p1f1_gn_185001-194912.nc
+   /p/user_pub/pmp/demo/sea-ice/links_siconc/MIROC6/historical/r3i1p1f1/siconc/siconc_SImon_MIROC6_historical_r3i1p1f1_gn_195001-201412.nc
+Converting units by  multiply 0.01
+
+-------------------------------------------
+Calculating model regional average metrics
+for  MIROC6
+--------------------------------------------
+arctic
+ca
+na
+np
+antarctic
+sp
+sa
+io
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+[WARNING] yaksa: 10 leaked handle pool objects
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+CPU times: user 145 ms, sys: 57.9 ms, total: 202 ms
+Wall time: 16min 45s
+</pre></div></div>
+</div>
+<p>The output JSON now includes metrics for all three models.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;sea_ice_demo/ex3/sea_ice_metrics.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{
+    &#34;DIMENSIONS&#34;: {
+        &#34;index&#34;: {
+            &#34;monthly_clim&#34;: &#34;Monthly climatology of extent&#34;,
+            &#34;total_extent&#34;: &#34;Sum of ice coverage where concentration &gt; 15%&#34;
+        },
+        &#34;json_structure&#34;: [
+            &#34;region&#34;,
+            &#34;realization&#34;,
+            &#34;obs&#34;,
+            &#34;index&#34;,
+            &#34;statistic&#34;
+        ],
+        &#34;model&#34;: [
+            &#34;CanESM5&#34;,
+            &#34;E3SM-1-0&#34;,
+            &#34;MIROC6&#34;
+        ],
+        &#34;region&#34;: [
+            &#34;arctic&#34;,
+            &#34;ca&#34;,
+            &#34;na&#34;,
+            &#34;np&#34;,
+            &#34;antarctic&#34;,
+            &#34;io&#34;,
+            &#34;sa&#34;,
+            &#34;sp&#34;
+        ],
+        &#34;statistic&#34;: {
+            &#34;mse&#34;: &#34;Mean Square Error (10^12 km^4)&#34;
+        }
+    },
+    &#34;RESULTS&#34;: {
+        &#34;CanESM5&#34;: {
+            &#34;antarctic&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.286304445114698&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;4.542657209664359&#34;
+                        }
+                    }
+                },
+                &#34;r1i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.2705435627546696&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;3.31914238715812&#34;
+                        }
+                    }
+                },
+                &#34;r2i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.29002317830303875&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;4.817666618178247&#34;
+                        }
+                    }
+                },
+                &#34;r3i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.2911360020251559&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;5.6514761857693845&#34;
+                        }
+                    }
+                }
+            },
+            &#34;arctic&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.07411837149010482&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.5344759242358808&#34;
+                        }
+                    }
+                },
+                &#34;r1i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.0897906234429174&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.9847816473978805&#34;
+                        }
+                    }
+                },
+                &#34;r2i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.07783337367868165&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.6853508957073962&#34;
+                        }
+                    }
+                },
+                &#34;r3i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.0720709467493335&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;2.032468374976366&#34;
+                        }
+                    }
+                }
+            },
+            &#34;ca&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.06337141934048413&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.02640474428046143&#34;
+                        }
+                    }
+                },
+                &#34;r1i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.03160970050552352&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.008373323686409789&#34;
+                        }
+                    }
+                },
+                &#34;r2i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.06641374247849027&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.04769850188410871&#34;
+                        }
+                    }
+                },
+                &#34;r3i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.07448795247489874&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.031534786726365796&#34;
+                        }
+                    }
+                }
+            },
+            &#34;io&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.04573389030361688&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.33202135970984636&#34;
+                        }
+                    }
+                },
+                &#34;r1i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.040685574761863415&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.223161551983003&#34;
+                        }
+                    }
+                },
+                &#34;r2i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.04572693344670885&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.33563892555535735&#34;
+                        }
+                    }
+                },
+                &#34;r3i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.05547540915660881&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.458187558303221&#34;
+                        }
+                    }
+                }
+            },
+            &#34;na&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.14744345706833706&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.1861797454555474&#34;
+                        }
+                    }
+                },
+                &#34;r1i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.16950875024588902&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.8958345677777696&#34;
+                        }
+                    }
+                },
+                &#34;r2i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.14823680785606305&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.1190421296472655&#34;
+                        }
+                    }
+                },
+                &#34;r3i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.14366916486708534&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.5952274178728996&#34;
+                        }
+                    }
+                }
+            },
+            &#34;np&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.0055052352990676585&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.3561933179738154e-06&#34;
+                        }
+                    }
+                },
+                &#34;r1i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.008419597492711275&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.0011396654988171042&#34;
+                        }
+                    }
+                },
+                &#34;r2i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.0066786848652949675&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.0011312610318961892&#34;
+                        }
+                    }
+                },
+                &#34;r3i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.004720184916638091&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.134991428164361e-05&#34;
+                        }
+                    }
+                }
+            },
+            &#34;sa&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.24507804758287582&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.21829594776003455&#34;
+                        }
+                    }
+                },
+                &#34;r1i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.20065110417787246&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.16093691606448515&#34;
+                        }
+                    }
+                },
+                &#34;r2i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.24628928342174694&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.18549791220930334&#34;
+                        }
+                    }
+                },
+                &#34;r3i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.2420962209223723&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.3246725364168564&#34;
+                        }
+                    }
+                }
+            },
+            &#34;sp&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.015235521003588432&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.2027634446167885&#34;
+                        }
+                    }
+                },
+                &#34;r1i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.015036289107735253&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.9159856464507651&#34;
+                        }
+                    }
+                },
+                &#34;r2i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.024334230797936576&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.4248466137382687&#34;
+                        }
+                    }
+                },
+                &#34;r3i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.0155135957970158&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.2981785591540005&#34;
+                        }
+                    }
+                }
+            }
+        },
+        &#34;E3SM-1-0&#34;: {
+            &#34;antarctic&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.2712910250837596&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.641406992392678&#34;
+                        }
+                    }
+                },
+                &#34;r1i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.38721339145214084&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.21094145964623673&#34;
+                        }
+                    }
+                },
+                &#34;r2i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.26877288912334857&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.6598404486630004&#34;
+                        }
+                    }
+                },
+                &#34;r3i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.2435705245925407&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.8575345935924709&#34;
+                        }
+                    }
+                },
+                &#34;r4i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.2759737924697999&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.011824021687754&#34;
+                        }
+                    }
+                }
+            },
+            &#34;arctic&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;1.1600970808740905&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;2.005831055976063&#34;
+                        }
+                    }
+                },
+                &#34;r1i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;1.1603204311505024&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;2.030507158527881&#34;
+                        }
+                    }
+                },
+                &#34;r2i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;1.197184843341671&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.6265473421554568&#34;
+                        }
+                    }
+                },
+                &#34;r3i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;1.0818924321222867&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;2.3876574150640635&#34;
+                        }
+                    }
+                },
+                &#34;r4i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;1.0750233178668298&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;2.015177995502851&#34;
+                        }
+                    }
+                }
+            },
+            &#34;ca&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.06556676468015665&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.0008318821313221659&#34;
+                        }
+                    }
+                },
+                &#34;r1i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.06692081981762993&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;4.1785016078305246e-05&#34;
+                        }
+                    }
+                },
+                &#34;r2i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.05264997712274583&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.4444811574992051e-05&#34;
+                        }
+                    }
+                },
+                &#34;r3i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.08886471001969645&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.0050768997960854425&#34;
+                        }
+                    }
+                },
+                &#34;r4i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.07659164328504993&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.0029573874530499232&#34;
+                        }
+                    }
+                }
+            },
+            &#34;io&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.05645457530158847&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.03782377154869018&#34;
+                        }
+                    }
+                },
+                &#34;r1i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.06345253635091992&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.01237930945282938&#34;
+                        }
+                    }
+                },
+                &#34;r2i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.05178485578464389&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.02373863421036596&#34;
+                        }
+                    }
+                },
+                &#34;r3i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.06850728010096704&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.07066570595587236&#34;
+                        }
+                    }
+                },
+                &#34;r4i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.07015095590607602&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.06089412264247427&#34;
+                        }
+                    }
+                }
+            },
+            &#34;na&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.5269113737615976&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.9028520120169525&#34;
+                        }
+                    }
+                },
+                &#34;r1i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.5278233706256472&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.9514249147235673&#34;
+                        }
+                    }
+                },
+                &#34;r2i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.5186230160573806&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.7258633199904024&#34;
+                        }
+                    }
+                },
+                &#34;r3i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.5373451503952179&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.0999193024571021&#34;
+                        }
+                    }
+                },
+                &#34;r4i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.48714115101035943&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.8548562691208009&#34;
+                        }
+                    }
+                }
+            },
+            &#34;np&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.25822525983880873&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.20118045523960082&#34;
+                        }
+                    }
+                },
+                &#34;r1i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.2587606153696512&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.21846457619506263&#34;
+                        }
+                    }
+                },
+                &#34;r2i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.2572838524749538&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.19205408318339318&#34;
+                        }
+                    }
+                },
+                &#34;r3i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.24350176575462187&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.19020142229135586&#34;
+                        }
+                    }
+                },
+                &#34;r4i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.2635264177480379&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.20463245826006815&#34;
+                        }
+                    }
+                }
+            },
+            &#34;sa&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.08526540810855697&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.4135687698582245&#34;
+                        }
+                    }
+                },
+                &#34;r1i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.0941783826778278&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.30289427422253834&#34;
+                        }
+                    }
+                },
+                &#34;r2i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.07452315066382884&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.3648846350157542&#34;
+                        }
+                    }
+                },
+                &#34;r3i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.09076642601966597&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.46250787386653075&#34;
+                        }
+                    }
+                },
+                &#34;r4i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.09823531333025226&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.5444640379137466&#34;
+                        }
+                    }
+                }
+            },
+            &#34;sp&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.4901922428050756&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.002069034460989729&#34;
+                        }
+                    }
+                },
+                &#34;r1i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.5165467219413418&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.044574352751696585&#34;
+                        }
+                    }
+                },
+                &#34;r2i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.4294712533526206&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.002059944324885434&#34;
+                        }
+                    }
+                },
+                &#34;r3i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.4965352557784154&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.0008218479438377459&#34;
+                        }
+                    }
+                },
+                &#34;r4i2p2f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.47450029334958926&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.0001552792507891479&#34;
+                        }
+                    }
+                }
+            }
+        },
+        &#34;MIROC6&#34;: {
+            &#34;antarctic&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;15.13998617639839&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;68.6632614502658&#34;
+                        }
+                    }
+                },
+                &#34;r1i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;15.084479520142164&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;68.52794560927198&#34;
+                        }
+                    }
+                },
+                &#34;r2i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;15.139330510992973&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;68.85676894043061&#34;
+                        }
+                    }
+                },
+                &#34;r3i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;15.188547508249986&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;68.82973879104648&#34;
+                        }
+                    }
+                },
+                &#34;r4i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;15.087865990740454&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;68.43907940876977&#34;
+                        }
+                    }
+                }
+            },
+            &#34;arctic&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.6164058774197069&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.772159995521514&#34;
+                        }
+                    }
+                },
+                &#34;r1i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.7453729952096938&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.7563334724125443&#34;
+                        }
+                    }
+                },
+                &#34;r2i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.6317883303312207&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.5608082965815141&#34;
+                        }
+                    }
+                },
+                &#34;r3i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.5693493216936317&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.8057186995366655&#34;
+                        }
+                    }
+                },
+                &#34;r4i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.5651094204929541&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.997484281173332&#34;
+                        }
+                    }
+                }
+            },
+            &#34;ca&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.06610814001415294&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.04601931652473067&#34;
+                        }
+                    }
+                },
+                &#34;r1i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.09525521991116574&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.02804306362125295&#34;
+                        }
+                    }
+                },
+                &#34;r2i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.0661490981771208&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.04281925224724488&#34;
+                        }
+                    }
+                },
+                &#34;r3i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.049252354602055966&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.06157451819422781&#34;
+                        }
+                    }
+                },
+                &#34;r4i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.053386600877679824&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.05548551404269704&#34;
+                        }
+                    }
+                }
+            },
+            &#34;io&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.8359153137312322&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.6632971662216927&#34;
+                        }
+                    }
+                },
+                &#34;r1i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.8424860072371962&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.6677768392989374&#34;
+                        }
+                    }
+                },
+                &#34;r2i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.8358808213696858&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.6747971300205027&#34;
+                        }
+                    }
+                },
+                &#34;r3i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.8355440441444869&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.6600674102835808&#34;
+                        }
+                    }
+                },
+                &#34;r4i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.8266188629202105&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;1.6505960159038342&#34;
+                        }
+                    }
+                }
+            },
+            &#34;na&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.09568175850362463&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.19234550758107205&#34;
+                        }
+                    }
+                },
+                &#34;r1i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.10591256171798862&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.21831683739761823&#34;
+                        }
+                    }
+                },
+                &#34;r2i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.10568830409610037&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.1132988016950188&#34;
+                        }
+                    }
+                },
+                &#34;r3i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.08678794351830181&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.16498066807460046&#34;
+                        }
+                    }
+                },
+                &#34;r4i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.0959347363274953&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.2962272460769257&#34;
+                        }
+                    }
+                }
+            },
+            &#34;np&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.06832403454904791&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.045562446067180955&#34;
+                        }
+                    }
+                },
+                &#34;r1i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.07468658132970779&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.0496360291944792&#34;
+                        }
+                    }
+                },
+                &#34;r2i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.0686346736511589&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.03731231675015285&#34;
+                        }
+                    }
+                },
+                &#34;r3i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.07768683897141687&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.05341617746490438&#34;
+                        }
+                    }
+                },
+                &#34;r4i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;0.06571252437465899&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;0.042741283247571364&#34;
+                        }
+                    }
+                }
+            },
+            &#34;sa&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;2.0532720105434725&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;10.721021930990371&#34;
+                        }
+                    }
+                },
+                &#34;r1i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;2.082976134588596&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;10.824557738551325&#34;
+                        }
+                    }
+                },
+                &#34;r2i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;2.0536235519396926&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;10.654556297730434&#34;
+                        }
+                    }
+                },
+                &#34;r3i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;2.075852612226663&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;10.783402381871937&#34;
+                        }
+                    }
+                },
+                &#34;r4i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;2.0329848399165957&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;10.622242470221158&#34;
+                        }
+                    }
+                }
+            },
+            &#34;sp&#34;: {
+                &#34;model_mean&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;2.490776276834461&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;13.790489578711297&#34;
+                        }
+                    }
+                },
+                &#34;r1i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;2.4292367981812477&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;13.600443567817171&#34;
+                        }
+                    }
+                },
+                &#34;r2i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;2.490536164334231&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;13.91989497985934&#34;
+                        }
+                    }
+                },
+                &#34;r3i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;2.487625422289276&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;13.803712654042968&#34;
+                        }
+                    }
+                },
+                &#34;r4i1p1f1&#34;: {
+                    &#34;OSI-SAF&#34;: {
+                        &#34;monthly_clim&#34;: {
+                            &#34;mse&#34;: &#34;2.5085679669338607&#34;
+                        },
+                        &#34;total_extent&#34;: {
+                            &#34;mse&#34;: &#34;13.838914179700371&#34;
+                        }
+                    }
+                }
+            }
+        }
+    },
+    &#34;json_structure&#34;: [
+        &#34;region&#34;,
+        &#34;realization&#34;,
+        &#34;obs&#34;,
+        &#34;index&#34;,
+        &#34;statistic&#34;
+    ],
+    &#34;json_version&#34;: 3.0,
+    &#34;model_year_range&#34;: {
+        &#34;CanESM5&#34;: [
+            &#34;1981&#34;,
+            &#34;2010&#34;
+        ],
+        &#34;E3SM-1-0&#34;: [
+            &#34;1981&#34;,
+            &#34;2010&#34;
+        ],
+        &#34;MIROC6&#34;: [
+            &#34;1981&#34;,
+            &#34;2010&#34;
+        ]
+    },
+    &#34;provenance&#34;: {
+        &#34;commandLine&#34;: &#34;/home/ordonez4/miniconda3/envs/pmp_si_test_2/bin/sea_ice_driver.py -p sea_ice_param.py --test_data_set E3SM-1-0 CanESM5 MIROC6 --realization * --case_id ex3&#34;,
+        &#34;conda&#34;: {
+            &#34;Platform&#34;: &#34;linux-64&#34;,
+            &#34;PythonVersion&#34;: &#34;3.8.15.final.0&#34;,
+            &#34;Version&#34;: &#34;23.1.0&#34;,
+            &#34;buildVersion&#34;: &#34;not installed&#34;
+        },
+        &#34;date&#34;: &#34;2024-04-25 11:08:36&#34;,
+        &#34;openGL&#34;: {
+            &#34;GLX&#34;: {
+                &#34;client&#34;: {},
+                &#34;server&#34;: {}
+            }
+        },
+        &#34;osAccess&#34;: false,
+        &#34;packages&#34;: {
+            &#34;PMP&#34;: &#34;v3.0.2-11-g06b151f&#34;,
+            &#34;PMPObs&#34;: &#34;See &#39;References&#39; key below, for detailed obs provenance information.&#34;,
+            &#34;blas&#34;: &#34;0.3.27&#34;,
+            &#34;cdat_info&#34;: &#34;8.2.1&#34;,
+            &#34;cdms&#34;: &#34;3.1.5&#34;,
+            &#34;cdp&#34;: &#34;1.7.0&#34;,
+            &#34;cdtime&#34;: &#34;3.1.4&#34;,
+            &#34;cdutil&#34;: &#34;8.2.1&#34;,
+            &#34;clapack&#34;: null,
+            &#34;esmf&#34;: &#34;0.8.5&#34;,
+            &#34;esmpy&#34;: &#34;8.6.0&#34;,
+            &#34;genutil&#34;: &#34;8.2.1&#34;,
+            &#34;lapack&#34;: &#34;3.9.0&#34;,
+            &#34;matplotlib&#34;: null,
+            &#34;mesalib&#34;: null,
+            &#34;numpy&#34;: &#34;1.23.5&#34;,
+            &#34;python&#34;: &#34;3.10.14&#34;,
+            &#34;scipy&#34;: &#34;1.13.0&#34;,
+            &#34;uvcdat&#34;: null,
+            &#34;vcs&#34;: null,
+            &#34;vtk&#34;: null,
+            &#34;xarray&#34;: &#34;2024.3.0&#34;,
+            &#34;xcdat&#34;: &#34;0.7.0&#34;
+        },
+        &#34;platform&#34;: {
+            &#34;Name&#34;: &#34;gates.llnl.gov&#34;,
+            &#34;OS&#34;: &#34;Linux&#34;,
+            &#34;Version&#34;: &#34;3.10.0-1160.108.1.el7.x86_64&#34;
+        },
+        &#34;userId&#34;: &#34;ordonez4&#34;
+    }
+}
+</pre></div></div>
+</div>
+<p>Now the resulting bar chart shows three different models with their multiple realization spread.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;sea_ice_demo/ex3/MSE_bar_chart.png&quot;</span><span class="p">)</span>
+<span class="n">display_png</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/examples_Demo_9_seaIceExtent_ivanova_47_0.png" src="../_images/examples_Demo_9_seaIceExtent_ivanova_47_0.png" />
+</div>
+</div>
+</section>
+<section id="6.-Further-exploration">
+<h2>6. Further exploration<a class="headerlink" href="#6.-Further-exploration" title="Link to this heading">#</a></h2>
+<p>Maybe you want to compare more models, or take a closer look at the model data? Here are links to the data for further exploration.</p>
+<p>As a reminder, data for eight CMIP6 models (ACCESS-CM2, ACCESS-ESM1-5, CanESM5, CAS-ESM2-0, E3SM-1-0, E3SM-2-0, GFDL-ESM4, MIROC6, with 30 realizations in total across the model suite) is available here:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/p/user_pub/pmp/demo/sea-ice/links_siconc
+/p/user_pub/pmp/demo/sea-ice/links_area
+</pre></div>
+</div>
+<p>Note, expanding the “Working with multiple models” to include all available models will extend run time to around 15 minutes.</p>
+<p>The observational time series can be found at:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/p/user_pub/pmp/demo/sea-ice/EUMETSAT
+</pre></div>
+</div>
+<p>For some example plotting code using xcdat and matplotlib, see the scripts that were used to generate the introductory figures:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sea_ice_sector_plots.py
+sea_ice_line_plots.py
+</pre></div>
+</div>
+<p>Further exploration of the above datasets can be found in our supplemental Jupyter notebook: <a class="reference internal" href="Demo_9b_seaIce_data_explore.html"><span class="doc">Demo_9b_seaIce_data_explore.ipynb</span></a></p>
+</section>
+<section id="7.-Debugging-the-LLNL-Nimbus-binder-environment">
+<h2>7. Debugging the LLNL Nimbus binder environment<a class="headerlink" href="#7.-Debugging-the-LLNL-Nimbus-binder-environment" title="Link to this heading">#</a></h2>
+<p>For CAMAS workshop users, if you hit an issue at login</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Launching server...
+Launch attempt 1 failed, retrying...
+Launch attempt 2 failed, retrying...
+Launch attempt 3 failed, retrying...
+User $id already has a running server.
+</pre></div>
+</div>
+<p>The fix is to login (using your GitHub credentials) using <a class="reference external" href="https://binder-nimbus.llnl.gov/hub/home">https://binder-nimbus.llnl.gov/hub/home</a> and select “Stop My Server”.</p>
+<p>Once you refresh the start page (<a class="reference external" href="https://binder-nimbus.llnl.gov">https://binder-nimbus.llnl.gov</a>), login and start again, it should work as expected</p>
+<div align="right"><p>Go back to Top</p>
+</div><div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Demo_8_extremes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">8. Extremes Metrics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Demo_9b_seaIce_data_explore.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">9B. Sea Ice Supplementary</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#1.-Demo-data">1. Demo data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#1.1-Model-output">1.1 Model output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#1.2-Reference-dataset">1.2 Reference dataset</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#2.-Sectors">2. Sectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#3.-Basic-example">3. Basic example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#3.1-Introducing-the-PCMDI-Metrics-Package-(PMP)-parameter-file">3.1 Introducing the PCMDI Metrics Package (PMP) parameter file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#3.2-Introducing-the-PMP-driver-file">3.2 Introducing the PMP driver file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#3.3-Running-the-PMP-sea-ice-demo">3.3 Running the PMP sea ice demo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#4.-Working-with-multiple-realizations">4. Working with multiple realizations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#5.-Working-with-multiple-models">5. Working with multiple models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#6.-Further-exploration">6. Further exploration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#7.-Debugging-the-LLNL-Nimbus-binder-environment">7. Debugging the LLNL Nimbus binder environment</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PMP Developers
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, PMP Developers.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

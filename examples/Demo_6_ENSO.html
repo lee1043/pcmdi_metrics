@@ -1,0 +1,2323 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>6. ENSO &#8212; PMP Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=30646c52"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/Demo_6_ENSO';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="7. Precipitation Variability Across Timescales" href="Demo_7_precip_variability.html" />
+    <link rel="prev" title="5. MJO" href="Demo_5_mjo_metrics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/PMPLogo_500x421px_72dpi.png" class="logo__image only-light" alt="PMP Documentation - Home"/>
+    <img src="../_static/PMPLogo_500x421px_72dpi.png" class="logo__image only-dark pst-js-only" alt="PMP Documentation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">For users:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../start.html">Getting Started</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../supporting-data.html">Retrieving data for demos and use of the PMP</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../metrics.html">PMP Metrics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_mean-clim.html">Mean Climate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_enso.html">ENSO Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_mov.html">Extra-tropical modes of variability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_mjo.html">MJO baseline metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_monsoon.html">Monsoon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_ext.html">Extremes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_precip-variability.html">Precipitation Variability Across Timescales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_precip-distribution.html">Precipitation Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_subdaily-precipitation.html">Sub-daily precipitation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_sea_ice.html">Sea Ice</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/PCMDI/pcmdi_metrics/blob/main/pcmdi_metrics/cloud_feedback/README.md">Cloud Feedbacks</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../metrics-demo.html">Demo notebooks</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Demo_0_download_data.html">0. Prepare Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_1a_compute_climatologies.html">1A. Compute Climatologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_1b_mean_climate.html">1B. Mean Climate Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_2a_monsoon_wang.html">2A. Monsoon (Wang)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_2b_monsoon_sperber.html">2B. Monsoon (Sperber)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_3_diurnal_cycle.html">3. Diurnal Cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_4_modes_of_variability.html">4. Modes of Variability</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="Demo_5_mjo_metrics.html">5. MJO</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">6. ENSO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_7_precip_variability.html">7. Precipitation Variability Across Timescales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_8_extremes.html">8. Extremes Metrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_9_seaIceExtent_ivanova.html">9A. Sea Ice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Demo_9b_seaIce_data_explore.html">9B. Sea Ice Supplementary</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference external" href="https://pcmdi.llnl.gov/research/metrics/">Results</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">For developers/contributors:</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing Guide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../resources.html">Resources</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api.html">API Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.xcdat_open.html">pcmdi_metrics.io.xcdat_open</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.create_land_sea_mask.html">pcmdi_metrics.utils.create_land_sea_mask</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.apply_landmask.html">pcmdi_metrics.utils.apply_landmask</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.apply_oceanmask.html">pcmdi_metrics.utils.apply_oceanmask</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.create_target_grid.html">pcmdi_metrics.utils.create_target_grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.regrid.html">pcmdi_metrics.utils.regrid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.custom_season_average.html">pcmdi_metrics.utils.custom_season_average</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.custom_season_departure.html">pcmdi_metrics.utils.custom_season_departure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.region_subset.html">pcmdi_metrics.io.region_subset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.region_from_file.html">pcmdi_metrics.io.region_from_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_grid.html">pcmdi_metrics.io.get_grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_axis_list.html">pcmdi_metrics.io.get_axis_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_data_list.html">pcmdi_metrics.io.get_data_list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_latitude.html">pcmdi_metrics.io.get_latitude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_latitude_bounds.html">pcmdi_metrics.io.get_latitude_bounds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_latitude_key.html">pcmdi_metrics.io.get_latitude_key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_longitude.html">pcmdi_metrics.io.get_longitude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_longitude_bounds.html">pcmdi_metrics.io.get_longitude_bounds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_longitude_key.html">pcmdi_metrics.io.get_longitude_key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_time.html">pcmdi_metrics.io.get_time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_time_bounds.html">pcmdi_metrics.io.get_time_bounds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_time_bounds_key.html">pcmdi_metrics.io.get_time_bounds_key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.get_time_key.html">pcmdi_metrics.io.get_time_key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.io.select_subset.html">pcmdi_metrics.io.select_subset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.check_daily_time_axis.html">pcmdi_metrics.utils.check_daily_time_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.check_monthly_time_axis.html">pcmdi_metrics.utils.check_monthly_time_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.regenerate_time_axis.html">pcmdi_metrics.utils.regenerate_time_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.sort_human.html">pcmdi_metrics.utils.sort_human</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.fill_template.html">pcmdi_metrics.utils.fill_template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generated/pcmdi_metrics.utils.tree.html">pcmdi_metrics.utils.tree</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../resources_legacy.html">Legacy archive</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../pmp-using-cdp-guide.html">PMP using CDP Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pmpparser.html">PMPParser</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../team.html">Team</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/PCMDI/pcmdi_metrics">GitHub repository</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://github.com/PCMDI/pcmdi_metrics/discussions">GitHub discussions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/PCMDI/pcmdi_metrics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/PCMDI/pcmdi_metrics/edit/main/docs/examples/Demo_6_ENSO.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/PCMDI/pcmdi_metrics/issues/new?title=Issue%20on%20page%20%2Fexamples/Demo_6_ENSO.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/examples/Demo_6_ENSO.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>6. ENSO</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Download-demo-data">Download demo data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Usage">Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Basic-example">Basic example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ENSO-Metrics-Collections">ENSO Metrics Collections</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="6.-ENSO">
+<h1>6. ENSO<a class="headerlink" href="#6.-ENSO" title="Link to this heading">#</a></h1>
+<p>This notebook provides an overview of running the <a class="reference external" href="https://github.com/CLIVAR-PRP/ENSO_metrics">ENSO Metrics package</a> through the PMP. More information can be found in the <a href="#id1"><span class="problematic" id="id2">`README &lt;&gt;`__</span></a>. Example parameter files are located in the <a href="#id1"><span class="problematic" id="id3">`PMP sample setups &lt;&gt;`__</span></a>.</p>
+<p><strong>Reference</strong>: Planton, Y., E. Guilyardi, A. T. Wittenberg, J. Lee, P. J. Gleckler, T. Bayr, S. McGregor, M. J. McPhaden, S. Power, R. Roehrig, A. Voldoire, 2020: Evaluating El Niño in climate models with the CLIVAR 2020 ENSO metrics package. Bulletin of the American Meteorological Society. <a class="reference external" href="https://doi.org/10.1175/BAMS-D-19-0337.1">doi: 10.1175/BAMS-D-19-0337.1</a></p>
+<p>Description for individual metrics can be found at <a class="github reference external" href="https://github.com/CLIVAR-PRP/ENSO_metrics/wiki">CLIVAR-PRP/ENSO_metrics</a>.</p>
+<section id="Download-demo-data">
+<h2>Download demo data<a class="headerlink" href="#Download-demo-data" title="Link to this heading">#</a></h2>
+<p>The ENSO metrics demo requires downloading a large sample data set (size 10.8 GB). The ENSO metric requires a different set of sample data than the rest of the PMP metrics. This section of the notebook will download that data to your chosen location and generate a basic parameter file.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lets get the file containing the data needed for this demo</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://pcmdiweb.llnl.gov/pss/pmpdata/pmp_enso_tutorial_files.v20210823.txt&quot;</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;enso_data_files.txt&quot;</span><span class="p">,</span><span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>If you want to change the location where the demo data and output are stored, you can do so here:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is where you will be downloading the sample_data</span>
+<span class="n">demo_data_directory</span> <span class="o">=</span> <span class="s2">&quot;demo_data&quot;</span>
+<span class="c1"># this line is where your output will be stored</span>
+<span class="n">demo_output_directory</span> <span class="o">=</span> <span class="s2">&quot;demo_output&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>Then download the data. The total sample data size is 10.8 GB. This will take several minutes.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s download the files</span>
+<span class="kn">from</span> <span class="nn">pcmdi_metrics.io.base</span> <span class="kn">import</span> <span class="n">download_sample_data_files</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">download_sample_data_files</span><span class="p">(</span><span class="s2">&quot;enso_data_files.txt&quot;</span><span class="p">,</span> <span class="n">demo_data_directory</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All files downloaded&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Download failed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-20C/mon/psl/gn/v20210727/psl_mon_ERA-20C_PCMDI_gn_190001-201012.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-20C/mon/psl/gn/v20210727/psl_mon_ERA-20C_PCMDI_gn_190001-201012.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-20C/mon/ts/gn/v20210727/ts_mon_ERA-20C_PCMDI_gn_190001-201012.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-20C/mon/ts/gn/v20210727/ts_mon_ERA-20C_PCMDI_gn_190001-201012.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/NOAA-ESRL-PSD/20CR/mon/psl/gn/v20210727/psl_mon_20CR_PCMDI_gn_187101-201212.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/NOAA-ESRL-PSD/20CR/mon/psl/gn/v20210727/psl_mon_20CR_PCMDI_gn_187101-201212.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/NOAA-ESRL-PSD/20CR/mon/ts/gn/v20210727/ts_mon_20CR_PCMDI_gn_187101-201212.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/NOAA-ESRL-PSD/20CR/mon/ts/gn/v20210727/ts_mon_20CR_PCMDI_gn_187101-201212.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/NOAA-NCEI/CMAP-V1902/mon/pr/gn/v20210727/pr_mon_CMAP-V1902_PCMDI_gn_197901-201901.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/NOAA-NCEI/CMAP-V1902/mon/pr/gn/v20210727/pr_mon_CMAP-V1902_PCMDI_gn_197901-201901.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/MOHC/HadISST-1-1/mon/ts/gn/v20210727/ts_mon_HadISST-1-1_PCMDI_gn_187001-201907.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/MOHC/HadISST-1-1/mon/ts/gn/v20210727/ts_mon_HadISST-1-1_PCMDI_gn_187001-201907.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ESSO/TropFlux-1-0/mon/hfls/gn/v20210727/hfls_mon_TropFlux-1-0_PCMDI_gn_197901-201707.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ESSO/TropFlux-1-0/mon/hfls/gn/v20210727/hfls_mon_TropFlux-1-0_PCMDI_gn_197901-201707.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ESSO/TropFlux-1-0/mon/hfns/gn/v20210727/hfns_mon_TropFlux-1-0_PCMDI_gn_197901-201707.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ESSO/TropFlux-1-0/mon/hfns/gn/v20210727/hfns_mon_TropFlux-1-0_PCMDI_gn_197901-201707.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ESSO/TropFlux-1-0/mon/hfss/gn/v20210727/hfss_mon_TropFlux-1-0_PCMDI_gn_197901-201707.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ESSO/TropFlux-1-0/mon/hfss/gn/v20210727/hfss_mon_TropFlux-1-0_PCMDI_gn_197901-201707.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ESSO/TropFlux-1-0/mon/tas/gn/v20210727/tas_mon_TropFlux-1-0_PCMDI_gn_197901-201707.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ESSO/TropFlux-1-0/mon/tas/gn/v20210727/tas_mon_TropFlux-1-0_PCMDI_gn_197901-201707.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ESSO/TropFlux-1-0/mon/tauu/gn/v20210727/tauu_mon_TropFlux-1-0_PCMDI_gn_197901-201707.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ESSO/TropFlux-1-0/mon/tauu/gn/v20210727/tauu_mon_TropFlux-1-0_PCMDI_gn_197901-201707.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ESSO/TropFlux-1-0/mon/tauv/gn/v20210727/tauv_mon_TropFlux-1-0_PCMDI_gn_197901-201707.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ESSO/TropFlux-1-0/mon/tauv/gn/v20210727/tauv_mon_TropFlux-1-0_PCMDI_gn_197901-201707.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ESSO/TropFlux-1-0/mon/ts/gn/v20210727/ts_mon_TropFlux-1-0_PCMDI_gn_197901-201707.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ESSO/TropFlux-1-0/mon/ts/gn/v20210727/ts_mon_TropFlux-1-0_PCMDI_gn_197901-201707.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/hfls/gn/v20210727/hfls_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/hfls/gn/v20210727/hfls_mon_ERA-INT_PCMDI_gn_197901-201903.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/hfss/gn/v20210727/hfss_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/hfss/gn/v20210727/hfss_mon_ERA-INT_PCMDI_gn_197901-201903.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/hur/gn/v20210727/hur_mon_ERA-INT_PCMDI_gn_198901-201001.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/hur/gn/v20210727/hur_mon_ERA-INT_PCMDI_gn_198901-201001.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/hus/gn/v20210727/hus_mon_ERA-INT_PCMDI_gn_198901-201001.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/hus/gn/v20210727/hus_mon_ERA-INT_PCMDI_gn_198901-201001.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/pr/gn/v20210727/pr_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/pr/gn/v20210727/pr_mon_ERA-INT_PCMDI_gn_197901-201903.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/psl/gn/v20210727/psl_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/psl/gn/v20210727/psl_mon_ERA-INT_PCMDI_gn_197901-201903.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/rlds/gn/v20210727/rlds_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/rlds/gn/v20210727/rlds_mon_ERA-INT_PCMDI_gn_197901-201903.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/rlus/gn/v20210727/rlus_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/rlus/gn/v20210727/rlus_mon_ERA-INT_PCMDI_gn_197901-201903.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/rsds/gn/v20210727/rsds_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/rsds/gn/v20210727/rsds_mon_ERA-INT_PCMDI_gn_197901-201903.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/rsus/gn/v20210727/rsus_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/rsus/gn/v20210727/rsus_mon_ERA-INT_PCMDI_gn_197901-201903.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/sfcWind/gn/v20210727/sfcWind_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/sfcWind/gn/v20210727/sfcWind_mon_ERA-INT_PCMDI_gn_197901-201903.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/ta/gn/v20210727/ta_mon_ERA-INT_PCMDI_gn_198901-201001.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/ta/gn/v20210727/ta_mon_ERA-INT_PCMDI_gn_198901-201001.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/tauu/gn/v20210727/tauu_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/tauu/gn/v20210727/tauu_mon_ERA-INT_PCMDI_gn_197901-201903.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/tauv/gn/v20210727/tauv_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/tauv/gn/v20210727/tauv_mon_ERA-INT_PCMDI_gn_197901-201903.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/ts/gn/v20210727/ts_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/ts/gn/v20210727/ts_mon_ERA-INT_PCMDI_gn_197901-201903.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/ua/gn/v20210727/ua_mon_ERA-INT_PCMDI_gn_198901-201001.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/ua/gn/v20210727/ua_mon_ERA-INT_PCMDI_gn_198901-201001.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/uas/gn/v20210727/uas_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/uas/gn/v20210727/uas_mon_ERA-INT_PCMDI_gn_197901-201903.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/va/gn/v20210727/va_mon_ERA-INT_PCMDI_gn_198901-201001.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/va/gn/v20210727/va_mon_ERA-INT_PCMDI_gn_198901-201001.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/vas/gn/v20210727/vas_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/vas/gn/v20210727/vas_mon_ERA-INT_PCMDI_gn_197901-201903.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/zg/gn/v20210727/zg_mon_ERA-INT_PCMDI_gn_198901-201001.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/zg/gn/v20210727/zg_mon_ERA-INT_PCMDI_gn_198901-201001.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/NOAA-NCEI/GPCP-2-3/mon/pr/gn/v20210727/pr_mon_GPCP-2-3_PCMDI_gn_197901-201907.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/NOAA-NCEI/GPCP-2-3/mon/pr/gn/v20210727/pr_mon_GPCP-2-3_PCMDI_gn_197901-201907.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/NASA-GSFC/TRMM-3B43v-7/mon/pr/gn/v20210727/pr_mon_TRMM-3B43v-7_PCMDI_gn_199801-201712.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/NASA-GSFC/TRMM-3B43v-7/mon/pr/gn/v20210727/pr_mon_TRMM-3B43v-7_PCMDI_gn_199801-201712.nc
+Downloading: &#39;obs4MIPs_PCMDI_monthly/CNES/AVISO-1-0/mon/zos/gn/v20210727/zos_mon_AVISO-1-0_PCMDI_gn_199301-201912.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/obs4MIPs_PCMDI_monthly/CNES/AVISO-1-0/mon/zos/gn/v20210727/zos_mon_AVISO-1-0_PCMDI_gn_199301-201912.nc
+Downloading: &#39;CMIP5_demo_data/psl_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/CMIP5_demo_data/psl_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+Downloading: &#39;CMIP5_demo_data/ts_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/CMIP5_demo_data/ts_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+Downloading: &#39;CMIP5_demo_data/hfls_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/CMIP5_demo_data/hfls_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+Downloading: &#39;CMIP5_demo_data/hfss_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/CMIP5_demo_data/hfss_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+Downloading: &#39;CMIP5_demo_data/pr_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/CMIP5_demo_data/pr_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+Downloading: &#39;CMIP5_demo_data/rlds_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/CMIP5_demo_data/rlds_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+Downloading: &#39;CMIP5_demo_data/rlus_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/CMIP5_demo_data/rlus_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+Downloading: &#39;CMIP5_demo_data/rlut_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/CMIP5_demo_data/rlut_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+Downloading: &#39;CMIP5_demo_data/rsds_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/CMIP5_demo_data/rsds_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+Downloading: &#39;CMIP5_demo_data/rsdt_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/CMIP5_demo_data/rsdt_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+Downloading: &#39;CMIP5_demo_data/rsus_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/CMIP5_demo_data/rsus_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+Downloading: &#39;CMIP5_demo_data/rsut_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/CMIP5_demo_data/rsut_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+Downloading: &#39;CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+Downloading: &#39;CMIP5_demo_data/tauu_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/CMIP5_demo_data/tauu_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+Downloading: &#39;CMIP5_demo_data/zos_Omon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39; from &#39;https://pcmdiweb.llnl.gov/pss/pmpdata/&#39; in: demo_data/CMIP5_demo_data/zos_Omon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+All files downloaded
+</pre></div></div>
+</div>
+<p>After downloading the data, we generate the parameter file for this demo.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">download_sample_data</span> <span class="kn">import</span> <span class="n">generate_parameter_files</span>
+<span class="n">filenames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;basic_enso_param.py.in&quot;</span><span class="p">]</span>
+<span class="n">generate_parameter_files</span><span class="p">(</span><span class="n">demo_data_directory</span><span class="p">,</span> <span class="n">demo_output_directory</span><span class="p">,</span> <span class="n">filenames</span><span class="o">=</span><span class="n">filenames</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Preparing parameter file: basic_enso_param.py
+Saving User Choices
+</pre></div></div>
+</div>
+</section>
+<section id="Usage">
+<h2>Usage<a class="headerlink" href="#Usage" title="Link to this heading">#</a></h2>
+<p>The ENSO driver can be run from the command line as <code class="docutils literal notranslate"><span class="pre">enso_driver.py</span></code>. In this notebook, we will use bash cell magic (cells beginning with <code class="docutils literal notranslate"><span class="pre">%%bash</span></code>) to run the ENSO driver as a subprocess.</p>
+<p>For help, type:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>enso_driver.py --help
+</pre></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-bash notranslate"><div class="highlight"><pre><span></span>%%bash
+enso_driver.py<span class="w"> </span>--help
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+usage: enso_driver.py [-h] [--parameters PARAMETERS]
+                      [--diags OTHER_PARAMETERS [OTHER_PARAMETERS ...]]
+                      [--mip MIP] [--exp EXP] [--modpath MODPATH]
+                      [--modpath_lf MODPATH_LF]
+                      [--modnames MODNAMES [MODNAMES ...]] [-r REALIZATION]
+                      [--reference_data_path REFERENCE_DATA_PATH]
+                      [--reference_data_lf_path REFERENCE_DATA_LF_PATH]
+                      [--metricsCollection METRICSCOLLECTION]
+                      [--json_name JSON_NAME] [--netcdf_name NETCDF_NAME]
+                      [--results_dir RESULTS_DIR] [--case_id CASE_ID]
+                      [--obs_catalogue OBS_CATALOGUE]
+                      [--obs_cmor_path OBS_CMOR_PATH] [-d [DEBUG]]
+                      [--obs_cmor [OBS_CMOR]] [--nc_out [NC_OUT]]
+
+options:
+  -h, --help            show this help message and exit
+  --parameters PARAMETERS, -p PARAMETERS
+  --diags OTHER_PARAMETERS [OTHER_PARAMETERS ...]
+                        Path to other user-defined parameter file. (default:
+                        None)
+  --mip MIP             A WCRP MIP project such as CMIP3 and CMIP5 (default:
+                        cmip5)
+  --exp EXP             An experiment such as AMIP, historical or pi-contorl
+                        (default: historical)
+  --modpath MODPATH, --mp MODPATH
+                        Explicit path to model data (default: None)
+  --modpath_lf MODPATH_LF
+                        Directory path to model land fraction field (default:
+                        None)
+  --modnames MODNAMES [MODNAMES ...]
+                        List of models (default: None)
+  -r REALIZATION, --realization REALIZATION
+                        Consider all accessible realizations as idividual -
+                        r1i1p1: default, consider only &#39;r1i1p1&#39; member Or,
+                        specify realization, e.g, r3i1p1&#39; - *: consider all
+                        available realizations (default: r1i1p1)
+  --reference_data_path REFERENCE_DATA_PATH, --rdp REFERENCE_DATA_PATH
+                        The path/filename of reference (obs) data. (default:
+                        None)
+  --reference_data_lf_path REFERENCE_DATA_LF_PATH
+                        Data path to land fraction of reference dataset
+                        (default: None)
+  --metricsCollection METRICSCOLLECTION
+                        Metrics Collection e.g. ENSO_perf, ENSO_tel, or
+                        ENSO_proc (default: ENSO_perf)
+  --json_name JSON_NAME
+                        File name for output JSON (default: None)
+  --netcdf_name NETCDF_NAME
+                        File name for output NetCDF (default: None)
+  --results_dir RESULTS_DIR, --rd RESULTS_DIR
+                        The name of the folder where all runs will be stored.
+                        (default: None)
+  --case_id CASE_ID     version as date, e.g., v20191116 (yyyy-mm-dd)
+                        (default: v20240702)
+  --obs_catalogue OBS_CATALOGUE
+                        obs_catalogue JSON file for CMORized observation,
+                        default is None (default: None)
+  --obs_cmor_path OBS_CMOR_PATH
+                        Directory path for CMORized observation dataset,
+                        default is None (default: None)
+  -d [DEBUG], --debug [DEBUG]
+                        Option for debug: True / False (defualt) (default:
+                        False)
+  --obs_cmor [OBS_CMOR]
+                        Use CMORized reference database?: True / False
+                        (defualt) (default: False)
+  --nc_out [NC_OUT]     Option for generate netCDF file output: True (default)
+                        / False (default: True)
+</pre></div></div>
+</div>
+<section id="Basic-example">
+<h3>Basic example<a class="headerlink" href="#Basic-example" title="Link to this heading">#</a></h3>
+<p>Parameters for the ENSO Metrics can be set on the command line or using a parameter file. This first example will use a parameter file, which is shown below.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;basic_enso_param.py&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+import os
+
+#
+#  OPTIONS ARE SET BY USER IN THIS FILE AS INDICATED BELOW BY:
+#
+#
+
+# MODELS
+modnames = [&#39;ACCESS1-0&#39;]
+mip = &#39;cmip5&#39;  # cmip5, cmip6
+exp = &#39;historical&#39;  # historical, piControl
+realization = &#39;r1i1p1&#39;
+modpath = &#39;demo_data/CMIP5_demo_data/%(variable)_Amon_%(model)_historical_%(realization)_185001-200512.nc&#39;
+modpath_lf = &#39;demo_data/CMIP5_demo_data/sftlf_fx_%(model)_amip_r0i0p0.nc&#39;
+
+# OBSERVATIONS
+obs_cmor = True
+obs_cmor_path = &#34;demo_data/obs4MIPs_PCMDI_monthly&#34;
+obs_catalogue = &#34;demo_data/obs4MIPs_PCMDI-CEM2021_monthly_bySource_catalogue_v20210805_demo.json&#34;
+
+# METRICS COLLECTION
+metricsCollection = &#39;ENSO_perf&#39;  # ENSO_perf, ENSO_tel, ENSO_proc
+
+# OUTPUT
+case_id = &#39;basicTestEnso&#39;
+results_dir = os.path.join(&#39;demo_output&#39;,case_id, metricsCollection)
+
+json_name = &#39;%(mip)_%(exp)_%(metricsCollection)_%(case_id)_%(model)_%(realization)&#39;
+netcdf_name = json_name
+nc_out = False
+
+</pre></div></div>
+</div>
+<p>The next cell runs the ENSO driver using the basic parameter file. This may take several minutes.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-bash notranslate"><div class="highlight"><pre><span></span>%%bash
+enso_driver.py<span class="w"> </span>-p<span class="w"> </span>basic_enso_param.py
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+mip: cmip5
+exp: historical
+models: [&#39;ACCESS1-0&#39;]
+realization:  r1i1p1
+mc_name: ENSO_perf
+outdir: demo_output/basicTestEnso/ENSO_perf
+netcdf_path: demo_output/basicTestEnso/ENSO_perf
+debug: False
+obs_cmor: True
+obs_cmor_path: demo_data/obs4MIPs_PCMDI_monthly
+egg_pth: /home/ordonez4/miniconda3/envs/pmp_test/share/pmp
+output directory for graphics:demo_output/basicTestEnso/ENSO_perf
+output directory for diagnostic_results:demo_output/basicTestEnso/ENSO_perf
+output directory for metrics_results:demo_output/basicTestEnso/ENSO_perf
+list_variables: [&#39;pr&#39;, &#39;sst&#39;, &#39;taux&#39;]
+list_obs: [&#39;AVISO-1-0&#39;, &#39;ERA-INT&#39;, &#39;GPCP-2-3&#39;, &#39;HadISST-1-1&#39;]
+PMPdriver: dict_obs readin end
+Process start: Tue Jul  2 14:34:34 2024
+models: [&#39;ACCESS1-0&#39;]
+ ----- model:  ACCESS1-0  ---------------------
+PMPdriver: var loop start for model  ACCESS1-0
+realization: r1i1p1
+ --- run:  r1i1p1  ---
+ --- var:  pr  ---
+var_in_file: pr
+var, areacell_in_file, realm: pr areacella atmos
+path:  demo_data/CMIP5_demo_data/pr_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/pr_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+PMPdriver: var loop end
+ --- var:  sst  ---
+var_in_file: ts
+var, areacell_in_file, realm: sst areacella atmos
+path:  demo_data/CMIP5_demo_data/ts_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/ts_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+PMPdriver: var loop end
+ --- var:  taux  ---
+var_in_file: tauu
+var, areacell_in_file, realm: taux areacella atmos
+path:  demo_data/CMIP5_demo_data/tauu_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/tauu_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+PMPdriver: var loop end
+dictDatasets:
+{
+    &#34;model&#34;: {
+        &#34;ACCESS1-0_r1i1p1&#34;: {
+            &#34;pr&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/CMIP5_demo_data/pr_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#34;,
+                &#34;path + filename_area&#34;: &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                &#34;path + filename_landmask&#34;: &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                &#34;varname&#34;: &#34;pr&#34;
+            },
+            &#34;sst&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/CMIP5_demo_data/ts_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#34;,
+                &#34;path + filename_area&#34;: &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                &#34;path + filename_landmask&#34;: &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                &#34;varname&#34;: &#34;ts&#34;
+            },
+            &#34;taux&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/CMIP5_demo_data/tauu_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#34;,
+                &#34;path + filename_area&#34;: &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                &#34;path + filename_landmask&#34;: &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                &#34;varname&#34;: &#34;tauu&#34;
+            }
+        }
+    },
+    &#34;observations&#34;: {
+        &#34;ERA-Interim&#34;: {
+            &#34;pr&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/pr/gn/v20210727/pr_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#34;,
+                &#34;path + filename_area&#34;: null,
+                &#34;path + filename_landmask&#34;: null,
+                &#34;varname&#34;: &#34;pr&#34;
+            },
+            &#34;sst&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/ts/gn/v20210727/ts_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#34;,
+                &#34;path + filename_area&#34;: null,
+                &#34;path + filename_landmask&#34;: null,
+                &#34;varname&#34;: &#34;ts&#34;
+            },
+            &#34;taux&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/tauu/gn/v20210727/tauu_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#34;,
+                &#34;path + filename_area&#34;: null,
+                &#34;path + filename_landmask&#34;: null,
+                &#34;varname&#34;: &#34;tauu&#34;
+            }
+        },
+        &#34;GPCPv2.3&#34;: {
+            &#34;pr&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/obs4MIPs_PCMDI_monthly/NOAA-NCEI/GPCP-2-3/mon/pr/gn/v20210727/pr_mon_GPCP-2-3_PCMDI_gn_197901-201907.nc&#34;,
+                &#34;path + filename_area&#34;: null,
+                &#34;path + filename_landmask&#34;: null,
+                &#34;varname&#34;: &#34;pr&#34;
+            }
+        },
+        &#34;HadISST&#34;: {
+            &#34;sst&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/obs4MIPs_PCMDI_monthly/MOHC/HadISST-1-1/mon/ts/gn/v20210727/ts_mon_HadISST-1-1_PCMDI_gn_187001-201907.nc&#34;,
+                &#34;path + filename_area&#34;: null,
+                &#34;path + filename_landmask&#34;: null,
+                &#34;varname&#34;: &#34;ts&#34;
+            }
+        }
+    }
+}
+
+### Compute the metric collection ###
+
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = BiasPrLatRmse</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, BiasPrLatRmse = ACCESS1-0_r1i1p1 and ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageZonal</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageZonal</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, BiasPrLatRmse = ACCESS1-0_r1i1p1 and GPCPv2.3</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageZonal</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageZonal</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = BiasPrLonRmse</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, BiasPrLonRmse = ACCESS1-0_r1i1p1 and ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, BiasPrLonRmse = ACCESS1-0_r1i1p1 and GPCPv2.3</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = BiasSstLonRmse</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, BiasSstLonRmse = ACCESS1-0_r1i1p1 and ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, BiasSstLonRmse = ACCESS1-0_r1i1p1 and HadISST</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = BiasTauxLonRmse</span>
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/ordonez4/miniconda3/envs/pmp_test/lib/python3.10/site-packages/cdms2/MV2.py:318: Warning: arguments order for compress function has changed
+it is now: MV2.copmress(array,condition), if your code seems to not react or act wrong to a call to compress, please check this
+  warnings.warn(
+INFO::2024-07-02 14:42::pcmdi_metrics:: Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/demo_output/basicTestEnso/ENSO_perf/cmip5_historical_ENSO_perf_basicTestEnso_ACCESS1-0_r1i1p1.json
+2024-07-02 14:42:16,724 [INFO]: base.py(write:443) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/demo_output/basicTestEnso/ENSO_perf/cmip5_historical_ENSO_perf_basicTestEnso_ACCESS1-0_r1i1p1.json
+2024-07-02 14:42:16,724 [INFO]: base.py(write:443) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/demo_output/basicTestEnso/ENSO_perf/cmip5_historical_ENSO_perf_basicTestEnso_ACCESS1-0_r1i1p1.json
+INFO::2024-07-02 14:42::pcmdi_metrics:: Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/demo_output/basicTestEnso/ENSO_perf/cmip5_historical_ENSO_perf_basicTestEnso_ACCESS1-0_r1i1p1_diveDown.json
+2024-07-02 14:42:29,862 [INFO]: base.py(write:443) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/demo_output/basicTestEnso/ENSO_perf/cmip5_historical_ENSO_perf_basicTestEnso_ACCESS1-0_r1i1p1_diveDown.json
+2024-07-02 14:42:29,862 [INFO]: base.py(write:443) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/demo_output/basicTestEnso/ENSO_perf/cmip5_historical_ENSO_perf_basicTestEnso_ACCESS1-0_r1i1p1_diveDown.json
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, BiasTauxLonRmse = ACCESS1-0_r1i1p1 and ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageHorizontal</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageHorizontal</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoAmpl</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ACCESS1-0_r1i1p1</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = HadISST</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoDuration</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ACCESS1-0_r1i1p1</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = HadISST</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoSeasonality</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ACCESS1-0_r1i1p1</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = HadISST</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoSstDiversity_2</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ACCESS1-0_r1i1p1</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = HadISST</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoSstLonRmse</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, EnsoSstLonRmse = ACCESS1-0_r1i1p1 and ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, EnsoSstLonRmse = ACCESS1-0_r1i1p1 and HadISST</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoSstSkew</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ACCESS1-0_r1i1p1</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = HadISST</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoSstTsRmse</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, EnsoSstTsRmse = ACCESS1-0_r1i1p1 and ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, EnsoSstTsRmse = ACCESS1-0_r1i1p1 and HadISST</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = SeasonalPrLatRmse</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, SeasonalPrLatRmse = ACCESS1-0_r1i1p1 and ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageZonal</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageZonal</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, SeasonalPrLatRmse = ACCESS1-0_r1i1p1 and GPCPv2.3</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageZonal</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageZonal</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = SeasonalPrLonRmse</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, SeasonalPrLonRmse = ACCESS1-0_r1i1p1 and ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, SeasonalPrLonRmse = ACCESS1-0_r1i1p1 and GPCPv2.3</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = SeasonalSstLonRmse</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, SeasonalSstLonRmse = ACCESS1-0_r1i1p1 and ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, SeasonalSstLonRmse = ACCESS1-0_r1i1p1 and HadISST</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = SeasonalTauxLonRmse</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, SeasonalTauxLonRmse = ACCESS1-0_r1i1p1 and ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageHorizontal</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageHorizontal</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+PMPdriver: model loop end
+Process end: Tue Jul  2 14:42:29 2024
+</pre></div></div>
+</div>
+<div class="line-block">
+<div class="line">This run saved metrics to two files:</div>
+<div class="line">basicTestEnso/cmip5_historical_ENSO_perf_basicTestEnso_ACCESS1-0_r1i1p1.json basicTestEnso/cmip5_historical_ENSO_perf_basicTestEnso_ACCESS1-0_r1i1p1_diveDown.json</div>
+</div>
+<p>diveDown metrics are not available in all cases.</p>
+<p>The results section of cmip5_historical_ENSO_perf_basicTestEnso_ACCESS1-0_r1i1p1.json is shown below.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="n">metrics_file</span><span class="o">=</span><span class="n">demo_output_directory</span><span class="o">+</span><span class="s2">&quot;/basicTestEnso/ENSO_perf/cmip5_historical_ENSO_perf_basicTestEnso_ACCESS1-0_r1i1p1.json&quot;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">metrics_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)[</span><span class="s2">&quot;RESULTS&quot;</span><span class="p">][</span><span class="s2">&quot;model&quot;</span><span class="p">][</span><span class="s2">&quot;ACCESS1-0&quot;</span><span class="p">][</span><span class="s2">&quot;r1i1p1&quot;</span><span class="p">][</span><span class="s2">&quot;value&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">indent</span> <span class="o">=</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{
+  &#34;BiasPrLatRmse&#34;: {
+    &#34;diagnostic&#34;: {
+      &#34;ACCESS1-0_r1i1p1&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      },
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      },
+      &#34;GPCPv2.3&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      }
+    },
+    &#34;metric&#34;: {
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 1.1075304623846065,
+        &#34;value_error&#34;: null
+      },
+      &#34;GPCPv2.3&#34;: {
+        &#34;value&#34;: 1.9301242972172135,
+        &#34;value_error&#34;: null
+      }
+    }
+  },
+  &#34;BiasPrLonRmse&#34;: {
+    &#34;diagnostic&#34;: {
+      &#34;ACCESS1-0_r1i1p1&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      },
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      },
+      &#34;GPCPv2.3&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      }
+    },
+    &#34;metric&#34;: {
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 0.6464917771721344,
+        &#34;value_error&#34;: null
+      },
+      &#34;GPCPv2.3&#34;: {
+        &#34;value&#34;: 1.4165839641155156,
+        &#34;value_error&#34;: null
+      }
+    }
+  },
+  &#34;BiasSstLonRmse&#34;: {
+    &#34;diagnostic&#34;: {
+      &#34;ACCESS1-0_r1i1p1&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      },
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      },
+      &#34;HadISST&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      }
+    },
+    &#34;metric&#34;: {
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 0.6404287493308193,
+        &#34;value_error&#34;: null
+      },
+      &#34;HadISST&#34;: {
+        &#34;value&#34;: 0.49054786718298193,
+        &#34;value_error&#34;: null
+      }
+    }
+  },
+  &#34;BiasTauxLonRmse&#34;: {
+    &#34;diagnostic&#34;: {
+      &#34;ACCESS1-0_r1i1p1&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      },
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      }
+    },
+    &#34;metric&#34;: {
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 5.8373124987935965,
+        &#34;value_error&#34;: null
+      }
+    }
+  },
+  &#34;EnsoAmpl&#34;: {
+    &#34;diagnostic&#34;: {
+      &#34;ACCESS1-0_r1i1p1&#34;: {
+        &#34;value&#34;: 0.6630260736952586,
+        &#34;value_error&#34;: 0.0530845705527287
+      },
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 0.9001341048707652,
+        &#34;value_error&#34;: 0.1423236985494241
+      },
+      &#34;HadISST&#34;: {
+        &#34;value&#34;: 0.7688706055408969,
+        &#34;value_error&#34;: 0.06298833428079066
+      }
+    },
+    &#34;metric&#34;: {
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 26.341411784363938,
+        &#34;value_error&#34;: 17.543852271121864
+      },
+      &#34;HadISST&#34;: {
+        &#34;value&#34;: 13.766234667168376,
+        &#34;value_error&#34;: 13.968772137924121
+      }
+    }
+  },
+  &#34;EnsoDuration&#34;: {
+    &#34;diagnostic&#34;: {
+      &#34;ACCESS1-0_r1i1p1&#34;: {
+        &#34;value&#34;: 12.0,
+        &#34;value_error&#34;: null
+      },
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 13.0,
+        &#34;value_error&#34;: null
+      },
+      &#34;HadISST&#34;: {
+        &#34;value&#34;: 13.0,
+        &#34;value_error&#34;: null
+      }
+    },
+    &#34;metric&#34;: {
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 7.6923076923076925,
+        &#34;value_error&#34;: null
+      },
+      &#34;HadISST&#34;: {
+        &#34;value&#34;: 7.6923076923076925,
+        &#34;value_error&#34;: null
+      }
+    }
+  },
+  &#34;EnsoSeasonality&#34;: {
+    &#34;diagnostic&#34;: {
+      &#34;ACCESS1-0_r1i1p1&#34;: {
+        &#34;value&#34;: 1.6580607964897247,
+        &#34;value_error&#34;: 0.26592975514284783
+      },
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 2.052960042006758,
+        &#34;value_error&#34;: 0.6533381852649718
+      },
+      &#34;HadISST&#34;: {
+        &#34;value&#34;: 1.666626760243124,
+        &#34;value_error&#34;: 0.27353125995822913
+      }
+    },
+    &#34;metric&#34;: {
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 19.235603101705838,
+        &#34;value_error&#34;: 38.65610552276642
+      },
+      &#34;HadISST&#34;: {
+        &#34;value&#34;: 0.5139701316298112,
+        &#34;value_error&#34;: 32.284081772797805
+      }
+    }
+  },
+  &#34;EnsoSstDiversity_2&#34;: {
+    &#34;diagnostic&#34;: {
+      &#34;ACCESS1-0_r1i1p1&#34;: {
+        &#34;value&#34;: 10.0,
+        &#34;value_error&#34;: null
+      },
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 32.0,
+        &#34;value_error&#34;: null
+      },
+      &#34;HadISST&#34;: {
+        &#34;value&#34;: 49.0,
+        &#34;value_error&#34;: null
+      }
+    },
+    &#34;metric&#34;: {
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 68.75,
+        &#34;value_error&#34;: null
+      },
+      &#34;HadISST&#34;: {
+        &#34;value&#34;: 79.59183673469387,
+        &#34;value_error&#34;: null
+      }
+    }
+  },
+  &#34;EnsoSstLonRmse&#34;: {
+    &#34;diagnostic&#34;: {
+      &#34;ACCESS1-0_r1i1p1&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      },
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      },
+      &#34;HadISST&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      }
+    },
+    &#34;metric&#34;: {
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 0.16401033023030476,
+        &#34;value_error&#34;: null
+      },
+      &#34;HadISST&#34;: {
+        &#34;value&#34;: 0.14620423327573992,
+        &#34;value_error&#34;: null
+      }
+    }
+  },
+  &#34;EnsoSstSkew&#34;: {
+    &#34;diagnostic&#34;: {
+      &#34;ACCESS1-0_r1i1p1&#34;: {
+        &#34;value&#34;: -0.3339196537261687,
+        &#34;value_error&#34;: -0.02673496883520269
+      },
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 0.40501535626049495,
+        &#34;value_error&#34;: 0.06403855065638503
+      },
+      &#34;HadISST&#34;: {
+        &#34;value&#34;: 0.40320728014992363,
+        &#34;value_error&#34;: 0.033032027448448076
+      }
+    },
+    &#34;metric&#34;: {
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 182.4461711302128,
+        &#34;value_error&#34;: -19.63686084226418
+      },
+      &#34;HadISST&#34;: {
+        &#34;value&#34;: 182.81587911855365,
+        &#34;value_error&#34;: -13.415118084476173
+      }
+    }
+  },
+  &#34;EnsoSstTsRmse&#34;: {
+    &#34;diagnostic&#34;: {
+      &#34;ACCESS1-0_r1i1p1&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      },
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      },
+      &#34;HadISST&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      }
+    },
+    &#34;metric&#34;: {
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 0.10604060446246283,
+        &#34;value_error&#34;: null
+      },
+      &#34;HadISST&#34;: {
+        &#34;value&#34;: 0.07377326537861505,
+        &#34;value_error&#34;: null
+      }
+    }
+  },
+  &#34;SeasonalPrLatRmse&#34;: {
+    &#34;diagnostic&#34;: {
+      &#34;ACCESS1-0_r1i1p1&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      },
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      },
+      &#34;GPCPv2.3&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      }
+    },
+    &#34;metric&#34;: {
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 1.1594264845137487,
+        &#34;value_error&#34;: null
+      },
+      &#34;GPCPv2.3&#34;: {
+        &#34;value&#34;: 1.5589152451460864,
+        &#34;value_error&#34;: null
+      }
+    }
+  },
+  &#34;SeasonalPrLonRmse&#34;: {
+    &#34;diagnostic&#34;: {
+      &#34;ACCESS1-0_r1i1p1&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      },
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      },
+      &#34;GPCPv2.3&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      }
+    },
+    &#34;metric&#34;: {
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 1.2638515328921658,
+        &#34;value_error&#34;: null
+      },
+      &#34;GPCPv2.3&#34;: {
+        &#34;value&#34;: 1.4219913613495798,
+        &#34;value_error&#34;: null
+      }
+    }
+  },
+  &#34;SeasonalSstLonRmse&#34;: {
+    &#34;diagnostic&#34;: {
+      &#34;ACCESS1-0_r1i1p1&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      },
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      },
+      &#34;HadISST&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      }
+    },
+    &#34;metric&#34;: {
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 0.28801464882030564,
+        &#34;value_error&#34;: null
+      },
+      &#34;HadISST&#34;: {
+        &#34;value&#34;: 0.3080045183114524,
+        &#34;value_error&#34;: null
+      }
+    }
+  },
+  &#34;SeasonalTauxLonRmse&#34;: {
+    &#34;diagnostic&#34;: {
+      &#34;ACCESS1-0_r1i1p1&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      },
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: null,
+        &#34;value_error&#34;: null
+      }
+    },
+    &#34;metric&#34;: {
+      &#34;ERA-Interim&#34;: {
+        &#34;value&#34;: 4.234563898790571,
+        &#34;value_error&#34;: null
+      }
+    }
+  }
+}
+</pre></div></div>
+</div>
+</section>
+<section id="ENSO-Metrics-Collections">
+<h3>ENSO Metrics Collections<a class="headerlink" href="#ENSO-Metrics-Collections" title="Link to this heading">#</a></h3>
+<div class="line-block">
+<div class="line">There are 3 metrics collections available:</div>
+<div class="line">ENSO_perf</div>
+<div class="line">ENSO_tel</div>
+<div class="line">ENSO_proc</div>
+</div>
+<p>They can be selected using the <code class="docutils literal notranslate"><span class="pre">--metricsCollection</span></code> flag. The first example used the “ENSO_perf” collection.</p>
+<p>The next example runs the teleconnection collection. To save individual metrics in netCDF format, it uses the <code class="docutils literal notranslate"><span class="pre">--nc_out</span></code> flag.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-bash notranslate"><div class="highlight"><pre><span></span>%%bash<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$demo_output_directory</span><span class="s2">&quot;</span>
+enso_driver.py<span class="w"> </span>-p<span class="w"> </span>basic_enso_param.py<span class="w"> </span><span class="se">\</span>
+--metricsCollection<span class="w"> </span>ENSO_tel<span class="w"> </span><span class="se">\</span>
+--results_dir<span class="w"> </span><span class="nv">$1</span>/basicTestEnso/ENSO_tel<span class="w"> </span><span class="se">\</span>
+--nc_out<span class="w"> </span>True
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/ordonez4/miniconda3/envs/pmp_test/lib/python3.10/site-packages/cdms2/MV2.py:318: Warning: arguments order for compress function has changed
+it is now: MV2.copmress(array,condition), if your code seems to not react or act wrong to a call to compress, please check this
+  warnings.warn(
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+mip: cmip5
+exp: historical
+models: [&#39;ACCESS1-0&#39;]
+realization:  r1i1p1
+mc_name: ENSO_tel
+outdir: demo_output/basicTestEnso/ENSO_tel
+netcdf_path: demo_output/basicTestEnso/ENSO_tel
+debug: False
+obs_cmor: True
+obs_cmor_path: demo_data/obs4MIPs_PCMDI_monthly
+egg_pth: /home/ordonez4/miniconda3/envs/pmp_test/share/pmp
+output directory for graphics:demo_output/basicTestEnso/ENSO_tel
+output directory for diagnostic_results:demo_output/basicTestEnso/ENSO_tel
+output directory for metrics_results:demo_output/basicTestEnso/ENSO_tel
+list_variables: [&#39;pr&#39;, &#39;sst&#39;]
+list_obs: [&#39;AVISO-1-0&#39;, &#39;ERA-INT&#39;, &#39;GPCP-2-3&#39;, &#39;HadISST-1-1&#39;]
+PMPdriver: dict_obs readin end
+Process start: Tue Jul  2 14:42:40 2024
+models: [&#39;ACCESS1-0&#39;]
+ ----- model:  ACCESS1-0  ---------------------
+PMPdriver: var loop start for model  ACCESS1-0
+realization: r1i1p1
+ --- run:  r1i1p1  ---
+ --- var:  pr  ---
+var_in_file: pr
+var, areacell_in_file, realm: pr areacella atmos
+path:  demo_data/CMIP5_demo_data/pr_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/pr_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+PMPdriver: var loop end
+ --- var:  sst  ---
+var_in_file: ts
+var, areacell_in_file, realm: sst areacella atmos
+path:  demo_data/CMIP5_demo_data/ts_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/ts_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+PMPdriver: var loop end
+dictDatasets:
+{
+    &#34;model&#34;: {
+        &#34;ACCESS1-0_r1i1p1&#34;: {
+            &#34;pr&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/CMIP5_demo_data/pr_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#34;,
+                &#34;path + filename_area&#34;: &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                &#34;path + filename_landmask&#34;: &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                &#34;varname&#34;: &#34;pr&#34;
+            },
+            &#34;sst&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/CMIP5_demo_data/ts_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#34;,
+                &#34;path + filename_area&#34;: &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                &#34;path + filename_landmask&#34;: &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                &#34;varname&#34;: &#34;ts&#34;
+            }
+        }
+    },
+    &#34;observations&#34;: {
+        &#34;ERA-Interim&#34;: {
+            &#34;pr&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/pr/gn/v20210727/pr_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#34;,
+                &#34;path + filename_area&#34;: null,
+                &#34;path + filename_landmask&#34;: null,
+                &#34;varname&#34;: &#34;pr&#34;
+            },
+            &#34;sst&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/ts/gn/v20210727/ts_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#34;,
+                &#34;path + filename_area&#34;: null,
+                &#34;path + filename_landmask&#34;: null,
+                &#34;varname&#34;: &#34;ts&#34;
+            }
+        },
+        &#34;GPCPv2.3&#34;: {
+            &#34;pr&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/obs4MIPs_PCMDI_monthly/NOAA-NCEI/GPCP-2-3/mon/pr/gn/v20210727/pr_mon_GPCP-2-3_PCMDI_gn_197901-201907.nc&#34;,
+                &#34;path + filename_area&#34;: null,
+                &#34;path + filename_landmask&#34;: null,
+                &#34;varname&#34;: &#34;pr&#34;
+            }
+        },
+        &#34;HadISST&#34;: {
+            &#34;sst&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/obs4MIPs_PCMDI_monthly/MOHC/HadISST-1-1/mon/ts/gn/v20210727/ts_mon_HadISST-1-1_PCMDI_gn_187001-201907.nc&#34;,
+                &#34;path + filename_area&#34;: null,
+                &#34;path + filename_landmask&#34;: null,
+                &#34;varname&#34;: &#34;ts&#34;
+            }
+        }
+    }
+}
+
+### Compute the metric collection ###
+
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoAmpl</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ACCESS1-0_r1i1p1</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = HadISST</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">
+</span><span class="ansi-yellow-intense-fg">
+     %%%%%     -----     %%%%%
+     ERROR    File /home/ordonez4/miniconda3/envs/pmp_test/lib/python3.10/site-packages/EnsoMetrics/EnsoUvcdatToolsLib.py, line 1208, in CheckUnits: units
+          the file says that temperature (ts) is in K but it seems unlikely ([-1e+30, 304.7203])
+     %%%%%     -----     %%%%%
+</span>
+
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoPrMapDjf</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: twoVarRMSmetric, EnsoPrMapDjf = ACCESS1-0_r1i1p1 and ERA-Interim_ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: twoVarRMSmetric, EnsoPrMapDjf = ACCESS1-0_r1i1p1 and ERA-Interim_GPCPv2.3</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: twoVarRMSmetric, EnsoPrMapDjf = ACCESS1-0_r1i1p1 and HadISST_ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: twoVarRMSmetric, EnsoPrMapDjf = ACCESS1-0_r1i1p1 and HadISST_GPCPv2.3</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoPrMapJja</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: twoVarRMSmetric, EnsoPrMapJja = ACCESS1-0_r1i1p1 and ERA-Interim_ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: twoVarRMSmetric, EnsoPrMapJja = ACCESS1-0_r1i1p1 and ERA-Interim_GPCPv2.3</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: twoVarRMSmetric, EnsoPrMapJja = ACCESS1-0_r1i1p1 and HadISST_ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO::2024-07-02 14:58::pcmdi_metrics:: Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/demo_output/basicTestEnso/ENSO_tel/cmip5_historical_ENSO_tel_basicTestEnso_ACCESS1-0_r1i1p1.json
+2024-07-02 14:58:27,009 [INFO]: base.py(write:443) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/demo_output/basicTestEnso/ENSO_tel/cmip5_historical_ENSO_tel_basicTestEnso_ACCESS1-0_r1i1p1.json
+2024-07-02 14:58:27,009 [INFO]: base.py(write:443) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/demo_output/basicTestEnso/ENSO_tel/cmip5_historical_ENSO_tel_basicTestEnso_ACCESS1-0_r1i1p1.json
+INFO::2024-07-02 14:58::pcmdi_metrics:: Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/demo_output/basicTestEnso/ENSO_tel/cmip5_historical_ENSO_tel_basicTestEnso_ACCESS1-0_r1i1p1_diveDown.json
+2024-07-02 14:58:39,971 [INFO]: base.py(write:443) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/demo_output/basicTestEnso/ENSO_tel/cmip5_historical_ENSO_tel_basicTestEnso_ACCESS1-0_r1i1p1_diveDown.json
+2024-07-02 14:58:39,971 [INFO]: base.py(write:443) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/demo_output/basicTestEnso/ENSO_tel/cmip5_historical_ENSO_tel_basicTestEnso_ACCESS1-0_r1i1p1_diveDown.json
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-blue-intense-fg">     ComputeMetric: twoVarRMSmetric, EnsoPrMapJja = ACCESS1-0_r1i1p1 and HadISST_GPCPv2.3</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoSeasonality</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ACCESS1-0_r1i1p1</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = HadISST</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">
+</span><span class="ansi-yellow-intense-fg">
+     %%%%%     -----     %%%%%
+     ERROR    File /home/ordonez4/miniconda3/envs/pmp_test/lib/python3.10/site-packages/EnsoMetrics/EnsoUvcdatToolsLib.py, line 1208, in CheckUnits: units
+          the file says that temperature (ts) is in K but it seems unlikely ([-1e+30, 304.7203])
+     %%%%%     -----     %%%%%
+</span>
+
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoSstLonRmse</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, EnsoSstLonRmse = ACCESS1-0_r1i1p1 and ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, EnsoSstLonRmse = ACCESS1-0_r1i1p1 and HadISST</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">
+</span><span class="ansi-yellow-intense-fg">
+     %%%%%     -----     %%%%%
+     ERROR    File /home/ordonez4/miniconda3/envs/pmp_test/lib/python3.10/site-packages/EnsoMetrics/EnsoUvcdatToolsLib.py, line 1208, in CheckUnits: units
+          the file says that temperature (ts) is in K but it seems unlikely ([-1e+30, 304.7203])
+     %%%%%     -----     %%%%%
+</span>
+
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoSstMapDjf</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, EnsoSstMapDjf = ACCESS1-0_r1i1p1 and ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoSstMapJja</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, EnsoSstMapJja = ACCESS1-0_r1i1p1 and ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+PMPdriver: model loop end
+Process end: Tue Jul  2 14:58:39 2024
+</pre></div></div>
+</div>
+<p>All of the results (netCDF and JSON) are located in the output directory, which uses the metrics collection name.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls<span class="w"> </span><span class="o">{</span>demo_output_directory<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;/basicTestEnso/ENSO_tel/*.nc&quot;</span><span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+demo_output/basicTestEnso/ENSO_tel/cmip5_historical_ENSO_tel_basicTestEnso_ACCESS1-0_r1i1p1_EnsoAmpl.nc
+demo_output/basicTestEnso/ENSO_tel/cmip5_historical_ENSO_tel_basicTestEnso_ACCESS1-0_r1i1p1_EnsoPrMapDjf.nc
+demo_output/basicTestEnso/ENSO_tel/cmip5_historical_ENSO_tel_basicTestEnso_ACCESS1-0_r1i1p1_EnsoPrMapJja.nc
+demo_output/basicTestEnso/ENSO_tel/cmip5_historical_ENSO_tel_basicTestEnso_ACCESS1-0_r1i1p1_EnsoSeasonality.nc
+demo_output/basicTestEnso/ENSO_tel/cmip5_historical_ENSO_tel_basicTestEnso_ACCESS1-0_r1i1p1_EnsoSstLonRmse.nc
+demo_output/basicTestEnso/ENSO_tel/cmip5_historical_ENSO_tel_basicTestEnso_ACCESS1-0_r1i1p1_EnsoSstMapDjf.nc
+demo_output/basicTestEnso/ENSO_tel/cmip5_historical_ENSO_tel_basicTestEnso_ACCESS1-0_r1i1p1_EnsoSstMapJja.nc
+</pre></div></div>
+</div>
+<p>Finally, this example runs the remaining metrics collection ENSO_proc:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-bash notranslate"><div class="highlight"><pre><span></span>%%bash<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$demo_output_directory</span><span class="s2">&quot;</span>
+enso_driver.py<span class="w"> </span>-p<span class="w"> </span>basic_enso_param.py<span class="w"> </span><span class="se">\</span>
+--metricsCollection<span class="w"> </span>ENSO_proc<span class="w"> </span><span class="se">\</span>
+--results_dir<span class="w"> </span><span class="nv">$1</span>/basicTestEnso/ENSO_proc
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+mip: cmip5
+exp: historical
+models: [&#39;ACCESS1-0&#39;]
+realization:  r1i1p1
+mc_name: ENSO_proc
+outdir: demo_output/basicTestEnso/ENSO_proc
+netcdf_path: demo_output/basicTestEnso/ENSO_proc
+debug: False
+obs_cmor: True
+obs_cmor_path: demo_data/obs4MIPs_PCMDI_monthly
+egg_pth: /home/ordonez4/miniconda3/envs/pmp_test/share/pmp
+output directory for graphics:demo_output/basicTestEnso/ENSO_proc
+output directory for diagnostic_results:demo_output/basicTestEnso/ENSO_proc
+output directory for metrics_results:demo_output/basicTestEnso/ENSO_proc
+list_variables: [&#39;ssh&#39;, &#39;sst&#39;, &#39;taux&#39;, &#39;thf&#39;]
+list_obs: [&#39;AVISO-1-0&#39;, &#39;ERA-INT&#39;, &#39;GPCP-2-3&#39;, &#39;HadISST-1-1&#39;]
+<span class="ansi-magenta-intense-fg">Observation dataset AVISO-1-0 is not given for variable thf</span>
+<span class="ansi-magenta-intense-fg">Observation dataset GPCP-2-3 is not given for variable thf</span>
+<span class="ansi-magenta-intense-fg">Observation dataset HadISST-1-1 is not given for variable thf</span>
+PMPdriver: dict_obs readin end
+Process start: Tue Jul  2 14:58:50 2024
+models: [&#39;ACCESS1-0&#39;]
+ ----- model:  ACCESS1-0  ---------------------
+PMPdriver: var loop start for model  ACCESS1-0
+realization: r1i1p1
+ --- run:  r1i1p1  ---
+ --- var:  ssh  ---
+var_in_file: zos
+var, areacell_in_file, realm: ssh areacello ocean
+path:  demo_data/CMIP5_demo_data/zos_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+file_list:  []
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+PMPdriver: var loop end
+ --- var:  sst  ---
+var_in_file: ts
+var, areacell_in_file, realm: sst areacella atmos
+path:  demo_data/CMIP5_demo_data/ts_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/ts_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+PMPdriver: var loop end
+ --- var:  taux  ---
+var_in_file: tauu
+var, areacell_in_file, realm: taux areacella atmos
+path:  demo_data/CMIP5_demo_data/tauu_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/tauu_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+PMPdriver: var loop end
+ --- var:  thf  ---
+var_in_file: [&#39;hfls&#39;, &#39;hfss&#39;, &#39;rlds&#39;, &#39;rlus&#39;, &#39;rsds&#39;, &#39;rsus&#39;]
+var, areacell_in_file, realm: thf areacella atmos
+path:  demo_data/CMIP5_demo_data/hfls_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/hfls_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+path:  demo_data/CMIP5_demo_data/hfls_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/hfls_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+file_areacell_tmp: demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+path:  demo_data/CMIP5_demo_data/hfss_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/hfss_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+file_areacell_tmp: demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+path:  demo_data/CMIP5_demo_data/rlds_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/rlds_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+file_areacell_tmp: demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+path:  demo_data/CMIP5_demo_data/rlus_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/rlus_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+file_areacell_tmp: demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+path:  demo_data/CMIP5_demo_data/rsds_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/rsds_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+file_areacell_tmp: demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+path:  demo_data/CMIP5_demo_data/rsus_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/rsus_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#39;]
+path:  demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+file_list:  [&#39;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#39;]
+file_areacell_tmp: demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc
+PMPdriver: var loop end
+dictDatasets:
+{
+    &#34;model&#34;: {
+        &#34;ACCESS1-0_r1i1p1&#34;: {
+            &#34;ssh&#34;: {
+                &#34;areaname&#34;: &#34;areacello&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: null,
+                &#34;path + filename_area&#34;: &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                &#34;path + filename_landmask&#34;: null,
+                &#34;varname&#34;: &#34;zos&#34;
+            },
+            &#34;sst&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/CMIP5_demo_data/ts_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#34;,
+                &#34;path + filename_area&#34;: &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                &#34;path + filename_landmask&#34;: &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                &#34;varname&#34;: &#34;ts&#34;
+            },
+            &#34;taux&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/CMIP5_demo_data/tauu_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#34;,
+                &#34;path + filename_area&#34;: &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                &#34;path + filename_landmask&#34;: &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                &#34;varname&#34;: &#34;tauu&#34;
+            },
+            &#34;thf&#34;: {
+                &#34;areaname&#34;: [
+                    &#34;areacella&#34;,
+                    &#34;areacella&#34;,
+                    &#34;areacella&#34;,
+                    &#34;areacella&#34;,
+                    &#34;areacella&#34;,
+                    &#34;areacella&#34;
+                ],
+                &#34;landmaskname&#34;: [
+                    &#34;sftlf&#34;,
+                    &#34;sftlf&#34;,
+                    &#34;sftlf&#34;,
+                    &#34;sftlf&#34;,
+                    &#34;sftlf&#34;,
+                    &#34;sftlf&#34;
+                ],
+                &#34;path + filename&#34;: [
+                    &#34;demo_data/CMIP5_demo_data/hfls_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#34;,
+                    &#34;demo_data/CMIP5_demo_data/hfss_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#34;,
+                    &#34;demo_data/CMIP5_demo_data/rlds_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#34;,
+                    &#34;demo_data/CMIP5_demo_data/rlus_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#34;,
+                    &#34;demo_data/CMIP5_demo_data/rsds_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#34;,
+                    &#34;demo_data/CMIP5_demo_data/rsus_Amon_ACCESS1-0_historical_r1i1p1_185001-200512.nc&#34;
+                ],
+                &#34;path + filename_area&#34;: [
+                    &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                    &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                    &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                    &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                    &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                    &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;
+                ],
+                &#34;path + filename_landmask&#34;: [
+                    &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                    &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                    &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                    &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                    &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;,
+                    &#34;demo_data/CMIP5_demo_data/sftlf_fx_ACCESS1-0_amip_r0i0p0.nc&#34;
+                ],
+                &#34;varname&#34;: [
+                    &#34;hfls&#34;,
+                    &#34;hfss&#34;,
+                    &#34;rlds&#34;,
+                    &#34;rlus&#34;,
+                    &#34;rsds&#34;,
+                    &#34;rsus&#34;
+                ]
+            }
+        }
+    },
+    &#34;observations&#34;: {
+        &#34;AVISO&#34;: {
+            &#34;ssh&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/obs4MIPs_PCMDI_monthly/CNES/AVISO-1-0/mon/zos/gn/v20210727/zos_mon_AVISO-1-0_PCMDI_gn_199301-201912.nc&#34;,
+                &#34;path + filename_area&#34;: null,
+                &#34;path + filename_landmask&#34;: null,
+                &#34;varname&#34;: &#34;zos&#34;
+            }
+        },
+        &#34;ERA-Interim&#34;: {
+            &#34;sst&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/ts/gn/v20210727/ts_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#34;,
+                &#34;path + filename_area&#34;: null,
+                &#34;path + filename_landmask&#34;: null,
+                &#34;varname&#34;: &#34;ts&#34;
+            },
+            &#34;taux&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/tauu/gn/v20210727/tauu_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#34;,
+                &#34;path + filename_area&#34;: null,
+                &#34;path + filename_landmask&#34;: null,
+                &#34;varname&#34;: &#34;tauu&#34;
+            },
+            &#34;thf&#34;: {
+                &#34;areaname&#34;: [
+                    &#34;areacella&#34;,
+                    &#34;areacella&#34;,
+                    &#34;areacella&#34;,
+                    &#34;areacella&#34;,
+                    &#34;areacella&#34;,
+                    &#34;areacella&#34;
+                ],
+                &#34;landmaskname&#34;: [
+                    &#34;sftlf&#34;,
+                    &#34;sftlf&#34;,
+                    &#34;sftlf&#34;,
+                    &#34;sftlf&#34;,
+                    &#34;sftlf&#34;,
+                    &#34;sftlf&#34;
+                ],
+                &#34;path + filename&#34;: [
+                    &#34;demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/hfls/gn/v20210727/hfls_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#34;,
+                    &#34;demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/hfss/gn/v20210727/hfss_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#34;,
+                    &#34;demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/rlds/gn/v20210727/rlds_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#34;,
+                    &#34;demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/rlus/gn/v20210727/rlus_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#34;,
+                    &#34;demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/rsds/gn/v20210727/rsds_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#34;,
+                    &#34;demo_data/obs4MIPs_PCMDI_monthly/ECMWF/ERA-INT/mon/rsus/gn/v20210727/rsus_mon_ERA-INT_PCMDI_gn_197901-201903.nc&#34;
+                ],
+                &#34;path + filename_area&#34;: [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                &#34;path + filename_landmask&#34;: null,
+                &#34;varname&#34;: [
+                    &#34;hfls&#34;,
+                    &#34;hfss&#34;,
+                    &#34;rlds&#34;,
+                    &#34;rlus&#34;,
+                    &#34;rsds&#34;,
+                    &#34;rsus&#34;
+                ]
+            }
+        },
+        &#34;HadISST&#34;: {
+            &#34;sst&#34;: {
+                &#34;areaname&#34;: &#34;areacella&#34;,
+                &#34;landmaskname&#34;: &#34;sftlf&#34;,
+                &#34;path + filename&#34;: &#34;demo_data/obs4MIPs_PCMDI_monthly/MOHC/HadISST-1-1/mon/ts/gn/v20210727/ts_mon_HadISST-1-1_PCMDI_gn_187001-201907.nc&#34;,
+                &#34;path + filename_area&#34;: null,
+                &#34;path + filename_landmask&#34;: null,
+                &#34;varname&#34;: &#34;ts&#34;
+            }
+        }
+    }
+}
+
+### Compute the metric collection ###
+
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = BiasSstLonRmse</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, BiasSstLonRmse = ACCESS1-0_r1i1p1 and ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, BiasSstLonRmse = ACCESS1-0_r1i1p1 and HadISST</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = BiasTauxLonRmse</span>
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/home/ordonez4/miniconda3/envs/pmp_test/lib/python3.10/site-packages/cdms2/MV2.py:318: Warning: arguments order for compress function has changed
+it is now: MV2.copmress(array,condition), if your code seems to not react or act wrong to a call to compress, please check this
+  warnings.warn(
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, BiasTauxLonRmse = ACCESS1-0_r1i1p1 and ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageHorizontal</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageHorizontal</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoAmpl</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ACCESS1-0_r1i1p1</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = HadISST</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsodSstOce_2</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: twoVarmetric = ACCESS1-0_r1i1p1</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib ReadAndSelectRegion</span>
+<span class="ansi-yellow-intense-fg">                         hfls sign reversed</span>
+<span class="ansi-yellow-intense-fg">     range old = +1.99 to +243.32</span>
+<span class="ansi-yellow-intense-fg">     range new = -243.32 to -1.99</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib ReadAndSelectRegion</span>
+<span class="ansi-yellow-intense-fg">                         hfss sign reversed</span>
+<span class="ansi-yellow-intense-fg">     range old = -3.28 to +31.07</span>
+<span class="ansi-yellow-intense-fg">     range new = -31.07 to +3.28</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: twoVarmetric = ERA-Interim_ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib ReadAndSelectRegion</span>
+<span class="ansi-yellow-intense-fg">                         hfls sign reversed</span>
+<span class="ansi-yellow-intense-fg">     range old = +3.32 to +219.02</span>
+<span class="ansi-yellow-intense-fg">     range new = -219.02 to -3.32</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib ReadAndSelectRegion</span>
+<span class="ansi-yellow-intense-fg">                         hfss sign reversed</span>
+<span class="ansi-yellow-intense-fg">     range old = -4.19 to +33.07</span>
+<span class="ansi-yellow-intense-fg">     range new = -33.07 to +4.19</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: twoVarmetric = HadISST_ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib ReadAndSelectRegion</span>
+<span class="ansi-yellow-intense-fg">                         hfls sign reversed</span>
+<span class="ansi-yellow-intense-fg">     range old = +3.32 to +219.02</span>
+<span class="ansi-yellow-intense-fg">     range new = -219.02 to -3.32</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib ReadAndSelectRegion</span>
+<span class="ansi-yellow-intense-fg">                         hfss sign reversed</span>
+<span class="ansi-yellow-intense-fg">     range old = -4.19 to +33.07</span>
+<span class="ansi-yellow-intense-fg">     range new = -33.07 to +4.19</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoFbSshSst</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: ENSO_proc, metric EnsoFbSshSst not computed</span>
+<span class="ansi-blue-intense-fg">          reason(s):</span>
+<span class="ansi-blue-intense-fg">           no modeled ssh given</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoFbSstTaux</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: twoVarmetric = ACCESS1-0_r1i1p1</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageHorizontal</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: twoVarmetric = ERA-Interim_ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageHorizontal</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: twoVarmetric = HadISST_ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageHorizontal</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoFbSstThf</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: twoVarmetric = ACCESS1-0_r1i1p1</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib ReadAndSelectRegion</span>
+<span class="ansi-yellow-intense-fg">                         hfls sign reversed</span>
+<span class="ansi-yellow-intense-fg">     range old = +1.99 to +243.32</span>
+<span class="ansi-yellow-intense-fg">     range new = -243.32 to -1.99</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib ReadAndSelectRegion</span>
+<span class="ansi-yellow-intense-fg">                         hfss sign reversed</span>
+<span class="ansi-yellow-intense-fg">     range old = -3.28 to +31.07</span>
+<span class="ansi-yellow-intense-fg">     range new = -31.07 to +3.28</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: twoVarmetric = ERA-Interim_ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib ReadAndSelectRegion</span>
+<span class="ansi-yellow-intense-fg">                         hfls sign reversed</span>
+<span class="ansi-yellow-intense-fg">     range old = +3.32 to +219.02</span>
+<span class="ansi-yellow-intense-fg">     range new = -219.02 to -3.32</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib ReadAndSelectRegion</span>
+<span class="ansi-yellow-intense-fg">                         hfss sign reversed</span>
+<span class="ansi-yellow-intense-fg">     range old = -4.19 to +33.07</span>
+<span class="ansi-yellow-intense-fg">     range new = -33.07 to +4.19</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: twoVarmetric = HadISST_ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib ReadAndSelectRegion</span>
+<span class="ansi-yellow-intense-fg">                         hfls sign reversed</span>
+<span class="ansi-yellow-intense-fg">     range old = +3.32 to +219.02</span>
+<span class="ansi-yellow-intense-fg">     range new = -219.02 to -3.32</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib ReadAndSelectRegion</span>
+<span class="ansi-yellow-intense-fg">                         hfss sign reversed</span>
+<span class="ansi-yellow-intense-fg">     range old = -4.19 to +33.07</span>
+<span class="ansi-yellow-intense-fg">     range new = -33.07 to +4.19</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoFbTauxSsh</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: ENSO_proc, metric EnsoFbTauxSsh not computed</span>
+<span class="ansi-blue-intense-fg">          reason(s):</span>
+<span class="ansi-blue-intense-fg">           no modeled ssh given</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoSeasonality</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ACCESS1-0_r1i1p1</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = HadISST</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoSstLonRmse</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, EnsoSstLonRmse = ACCESS1-0_r1i1p1 and ERA-Interim</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarRMSmetric, EnsoSstLonRmse = ACCESS1-0_r1i1p1 and HadISST</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-yellow-intense-fg">               EnsoUvcdatToolsLib AverageMeridional</span>
+<span class="ansi-blue-intense-fg">     ComputeCollection: metric = EnsoSstSkew</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ACCESS1-0_r1i1p1</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = ERA-Interim</span>
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+INFO::2024-07-02 15:04::pcmdi_metrics:: Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/demo_output/basicTestEnso/ENSO_proc/cmip5_historical_ENSO_proc_basicTestEnso_ACCESS1-0_r1i1p1.json
+2024-07-02 15:04:16,643 [INFO]: base.py(write:443) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/demo_output/basicTestEnso/ENSO_proc/cmip5_historical_ENSO_proc_basicTestEnso_ACCESS1-0_r1i1p1.json
+2024-07-02 15:04:16,643 [INFO]: base.py(write:443) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/demo_output/basicTestEnso/ENSO_proc/cmip5_historical_ENSO_proc_basicTestEnso_ACCESS1-0_r1i1p1.json
+INFO::2024-07-02 15:04::pcmdi_metrics:: Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/demo_output/basicTestEnso/ENSO_proc/cmip5_historical_ENSO_proc_basicTestEnso_ACCESS1-0_r1i1p1_diveDown.json
+2024-07-02 15:04:29,807 [INFO]: base.py(write:443) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/demo_output/basicTestEnso/ENSO_proc/cmip5_historical_ENSO_proc_basicTestEnso_ACCESS1-0_r1i1p1_diveDown.json
+2024-07-02 15:04:29,807 [INFO]: base.py(write:443) &gt;&gt; Results saved to a json file: /home/ordonez4/git/pcmdi_metrics/doc/jupyter/Demo/demo_output/basicTestEnso/ENSO_proc/cmip5_historical_ENSO_proc_basicTestEnso_ACCESS1-0_r1i1p1_diveDown.json
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+<span class="ansi-blue-intense-fg">     ComputeMetric: oneVarmetric = HadISST</span>
+<span class="ansi-yellow-intense-fg">                         NOTE: Estimated landmask applied</span>
+PMPdriver: model loop end
+Process end: Tue Jul  2 15:04:29 2024
+</pre></div></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Demo_5_mjo_metrics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">5. MJO</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Demo_7_precip_variability.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">7. Precipitation Variability Across Timescales</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Download-demo-data">Download demo data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Usage">Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Basic-example">Basic example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ENSO-Metrics-Collections">ENSO Metrics Collections</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PMP Developers
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, PMP Developers.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
